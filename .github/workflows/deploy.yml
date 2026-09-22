@@ -1,0 +1,25 @@
+name: Deploy to riseinfratech.in
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy over rsync/SSH
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore'
+          path: ./
+          remote_path: ${{ secrets.DEPLOY_PATH }}
+          remote_host: ${{ secrets.DEPLOY_HOST }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_user: ${{ secrets.DEPLOY_USER }}
+          remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
