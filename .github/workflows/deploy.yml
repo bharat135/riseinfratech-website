@@ -13,6 +13,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Refuse to deploy with an incomplete configuration
+        # An empty DEPLOY_PATH would make rsync --delete land in the SSH user's home directory.
+        run: |
+          test -n "${{ secrets.DEPLOY_HOST }}" || { echo "::error::DEPLOY_HOST secret is not set"; exit 1; }
+          test -n "${{ secrets.DEPLOY_USER }}" || { echo "::error::DEPLOY_USER secret is not set"; exit 1; }
+          test -n "${{ secrets.DEPLOY_SSH_KEY }}" || { echo "::error::DEPLOY_SSH_KEY secret is not set"; exit 1; }
+          case "${{ secrets.DEPLOY_PATH }}" in
+            /*/*) ;;
+            *) echo "::error::DEPLOY_PATH must be the absolute path of the site's document root on the server"; exit 1 ;;
+          esac
+
       - name: Deploy over rsync/SSH
         uses: burnett01/rsync-deployments@7.0.2
         with:
@@ -21,6 +32,6 @@ jobs:
           path: ./
           remote_path: ${{ secrets.DEPLOY_PATH }}
           remote_host: ${{ secrets.DEPLOY_HOST }}
-          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_port: ${{ secrets.DEPLOY_PORT || 22 }}
           remote_user: ${{ secrets.DEPLOY_USER }}
           remote_key: ${{ secrets.DEPLOY_SSH_KEY }}
