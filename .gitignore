@@ -1,3 +1,6 @@
 .claude/
 .DS_Store
 Thumbs.db
+
+# Published by RISE ERP (Website > Content), not part of the site source
+content.json

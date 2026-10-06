@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RISE INFRATECH | Ready-Mix Concrete, Pavers &amp; Infrastructure in Panvel, Maharashtra</title>
-<meta name="description" content="RISE INFRATECH supplies Ready-Mix Concrete (RMC), paver blocks, construction materials and infrastructure services from Panvel, Raigad, Maharashtra. Built to Rise. Built to Last.">
+<title>RISE INFRATECH | Ready-Mix Concrete, AAC Blocks, Pavers &amp; Construction Materials in Navi Mumbai</title>
+<meta name="description" content="RISE INFRATECH manufactures ready-mix concrete, dry and wet bag concrete, ready-mix plaster, tile adhesive, AAC blocks, windows, doors and paver blocks in Navi Mumbai, delivered across Mumbai, Navi Mumbai and Raigad. Built to Rise. Built to Last.">
 <meta name="theme-color" content="#1E2A34">
+<!-- Content published from RISE ERP (Website > Content). If the file is missing or unreachable, the text in this page is used. -->
+<meta name="rise-cms" content="content.json">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231E2A34'/%3E%3Cpath d='M22 25l20 9.5V55H22z' fill='%23fff'/%3E%3Cpath d='M22 9h20v19.5L22 19z' fill='%23F07A0C'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,17 +161,14 @@
   @keyframes pulse { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
   @keyframes march { to { stroke-dashoffset: -720; } }
 
-  .hero-title { font-size: clamp(3.3rem, 11.5vw, 8.6rem); }
-  .typed-line { display: block; min-height: .94em; white-space: nowrap; }
-  .caret { display: inline-block; width: .07em; height: .74em; margin-left: .06em; background: var(--gold); vertical-align: baseline; animation: blink 1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
+  .hero-title { font-size: clamp(2.4rem, 5.4vw, 4.9rem); max-width: 24ch; text-wrap: balance; }
   .live-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
   .live-dot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1.5px solid var(--gold); animation: ping 1.8s ease-out infinite; }
   @keyframes ping { from { transform: scale(.4); opacity: 1; } to { transform: scale(1.5); opacity: 0; } }
 
   .stats { background: rgba(14, 21, 27, .58); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-top: 1px solid rgba(255, 255, 255, .1); }
   .stat + .stat { border-left: 1px solid rgba(255, 255, 255, .1); }
-  @media (max-width: 767px) { .stat:nth-child(3) { border-left: 0; } .stat:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, .1); } }
+  @media (max-width: 767px) { .stat:nth-child(odd) { border-left: 0; } .stat:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, .1); } .stat:last-child:nth-child(odd) { grid-column: 1 / -1; } }
   .scroll-cue { width: 22px; height: 36px; border: 1.5px solid rgba(255, 255, 255, .45); border-radius: 12px; position: relative; }
   .scroll-cue::after { content: ""; position: absolute; left: 50%; top: 7px; width: 3px; height: 7px; margin-left: -1.5px; border-radius: 2px; background: var(--orange); animation: cue 1.8s ease-in-out infinite; }
   @keyframes cue { 0% { transform: translateY(0); opacity: 1; } 80%, 100% { transform: translateY(12px); opacity: 0; } }
@@ -257,8 +256,11 @@
   .cap-badge { display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-radius: 4px; border: 1px solid rgba(255, 255, 255, .12); background: rgba(255, 255, 255, .04); color: #fff; font-weight: 500; font-size: .92rem; transition: border-color .3s, background .3s, transform .3s; }
   .cap-badge:hover { border-color: var(--orange); background: rgba(240, 78, 35, .1); transform: translateX(6px); }
   .cap-badge svg { width: 20px; height: 20px; flex: none; color: var(--gold); }
+  .loc-badge { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 6px; border: 1.5px solid rgba(251, 176, 59, .55); background: linear-gradient(120deg, rgba(240, 78, 35, .22), rgba(251, 176, 59, .1)); box-shadow: 0 0 40px -12px rgba(240, 78, 35, .6); }
+  .loc-badge > svg { width: 34px; height: 34px; flex: none; color: var(--gold); }
 
-  /* ---------- Process strip ---------- */
+  /* ---------- Process strip (sits on the dark plant panel) ---------- */
+  .process-dark { --card: #1E2A34; --line: rgba(255, 255, 255, .14); --heading: #FFFFFF; --text: #A9B5BF; }
   .process { display: grid; gap: 0; counter-reset: step; }
   .step { position: relative; display: grid; grid-template-columns: 72px 1fr; gap: 0 20px; padding-bottom: 38px; }
   .step:last-child { padding-bottom: 0; }
@@ -274,7 +276,7 @@
   .step.active .step-icon::after { animation: ping 1.5s ease-out infinite; }
   .step-no { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; font-weight: 700; letter-spacing: .2em; font-size: .85rem; color: var(--text); transition: color .5s; }
   .step.lit .step-no { color: var(--orange); }
-  .step h3 { transition: color .5s; }
+  .step h4 { transition: color .5s; }
   @media (min-width: 1024px) {
     .process { grid-template-columns: repeat(5, 1fr); }
     .step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 14px; }
@@ -334,6 +336,24 @@
   .pillar:hover::before { transform: scaleX(1); }
   .pillar-icon { width: 68px; height: 68px; color: var(--orange); }
   .pillar-icon * { vector-effect: non-scaling-stroke; }
+  /* Leadership: director cards + profile dialog */
+  .avatar { display: grid; place-items: center; width: 92px; height: 92px; border-radius: 50%; overflow: hidden; background: linear-gradient(160deg, rgba(240, 78, 35, .16), rgba(251, 176, 59, .22)); color: var(--orange); font-family: var(--font-display, inherit); font-weight: 700; font-size: 1.6rem; letter-spacing: .04em; border: 2px solid rgba(245, 130, 32, .35); }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .avatar:empty::before { content: attr(data-initials); }
+  .avatar.lg { width: 128px; height: 128px; font-size: 2.2rem; }
+  .dir-bio { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .dir-more { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 18px; font-family: var(--font-display, inherit); font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange); border-bottom: 1px solid transparent; transition: border-color .2s; }
+  .dir-more:hover, .dir-more:focus-visible { border-color: var(--orange); }
+  .profile-dialog { width: min(680px, calc(100vw - 32px)); max-height: calc(100svh - 32px); padding: 0; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--text); box-shadow: 0 30px 80px rgba(0, 0, 0, .35); }
+  .profile-dialog::backdrop { background: rgba(7, 30, 41, .72); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+  .profile-dialog[open] { animation: fadeUp .35s cubic-bezier(.2, .7, .2, 1); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } }
+  .profile-card { position: relative; padding: 34px 30px 30px; }
+  .profile-card::before { content: ""; position: absolute; left: 0; top: 0; height: 4px; width: 100%; background: var(--grad); }
+  .profile-close { position: absolute; right: 14px; top: 14px; color: var(--text); border-color: var(--line); }
+  .profile-head { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+  .profile-links a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 3px; font-size: .88rem; font-weight: 500; transition: border-color .2s, color .2s; }
+  .profile-links a:hover { border-color: var(--orange); color: var(--orange); }
   .a-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: drawLoop 3.2s ease-in-out infinite; }
   @keyframes drawLoop { 0% { stroke-dashoffset: 1; } 45%, 80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
   .a-spin { transform-box: fill-box; transform-origin: center; animation: spin 7s linear infinite; }
@@ -508,6 +528,12 @@
     <g id="i-clock"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></g>
     <g id="i-pump"><path d="M3 20h18M6 20v-6h6v6M9 14V6l9-2.5 2 7"/><path d="M20 10.5v4"/></g>
     <g id="i-grade"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/><path d="M14.5 7.5 17 5l2.5 2.5"/></g>
+    <g id="i-bag"><path d="M7 4h10l-1.500 3.500c2.500 2 3.500 5 3.500 8 0 3-2 5-5 5h-4c-3 0-5-2-5-5 0-3 1-6 3.500-8z"/><path d="M8.500 7.500h7M9.500 14h5"/></g>
+    <g id="i-trowel"><path d="M3 13l8-8 8 3-11 8z"/><path d="M13.500 13.500l4 4a2.100 2.100 0 0 1-3 3l-4-4"/></g>
+    <g id="i-tile"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></g>
+    <g id="i-block"><path d="M3 5h18v14H3zM3 12h18M9 5v7M15 12v7"/></g>
+    <g id="i-window"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></g>
+    <g id="i-door"><path d="M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17M3 21h18M14.500 12v.010"/></g>
     <g id="i-chev-l"><path d="M15 5l-7 7 7 7"/></g>
     <g id="i-chev-r"><path d="M9 5l7 7-7 7"/></g>
     <g id="i-leaf"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15zM5 19l8.500-8.500"/></g>
@@ -523,6 +549,7 @@
     <g id="i-flip"><path d="M3 12a9 9 0 0 1 15.500-6.200L21 8M21 3v5h-5M21 12a9 9 0 0 1-15.500 6.200L3 16M3 21v-5h5"/></g>
     <g id="i-alert"><circle cx="12" cy="12" r="9"/><path d="M12 7.500v5.500M12 16.500v.010"/></g>
     <g id="i-up"><path d="M12 19V5M6 11l6-6 6 6"/></g>
+    <g id="i-close"><path d="M6 6l12 12M18 6 6 18"/></g>
     <g id="i-wa"><path d="M3 21l1.700-5A8.500 8.500 0 1 1 8 19.300z"/><path d="M9 8.300c0 3.200 2.600 6.200 6.200 6.700l1-1.600-2-1-.9.900c-1-.500-1.800-1.300-2.300-2.300l.9-.900-1-2z"/></g>
     <g id="i-in"><path d="M4.980 3.500a2.500 2.500 0 1 1 0 5 2.500 2.500 0 0 1 0-5zM3 9.750h4V21H3zM9.500 9.750h3.800v1.600h.060c.530-.950 1.830-1.950 3.760-1.950 4 0 4.750 2.500 4.750 5.800V21h-4v-5.100c0-1.200 0-2.800-1.750-2.800s-2 1.300-2 2.700V21h-4z"/></g>
     <g id="i-fb"><path d="M13.500 21v-7.500H16l.5-3.500h-3V8c0-1 .3-1.750 1.800-1.750h1.400V3.200C16.400 3.150 15.500 3 14.500 3 12 3 10 4.600 10 7.600V10H7v3.500h3V21z"/></g>
@@ -542,8 +569,8 @@
       <a class="nav-link" href="#home">Home</a>
       <a class="nav-link" href="#about">About</a>
       <a class="nav-link" href="#services">Services</a>
-      <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#plant">Plant &amp; Capabilities</a>
+      <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#sustainability">Sustainability</a>
       <a class="nav-link" href="#careers">Careers</a>
       <a class="nav-link" href="#leadership">Leadership</a>
@@ -571,8 +598,8 @@
     <a class="m-link" style="--i:0" href="#home"><small>01</small>Home</a>
     <a class="m-link" style="--i:1" href="#about"><small>02</small>About</a>
     <a class="m-link" style="--i:2" href="#services"><small>03</small>Services</a>
-    <a class="m-link" style="--i:3" href="#projects"><small>04</small>Projects</a>
-    <a class="m-link" style="--i:4" href="#plant"><small>05</small>Plant &amp; Capabilities</a>
+    <a class="m-link" style="--i:3" href="#plant"><small>04</small>Plant &amp; Capabilities</a>
+    <a class="m-link" style="--i:4" href="#projects"><small>05</small>Projects</a>
     <a class="m-link" style="--i:5" href="#sustainability"><small>06</small>Sustainability</a>
     <a class="m-link" style="--i:6" href="#careers"><small>07</small>Careers</a>
     <a class="m-link" style="--i:7" href="#leadership"><small>08</small>Leadership</a>
@@ -622,20 +649,18 @@
 
   <div id="heroContent" class="mx-auto flex w-full max-w-[1400px] flex-1 flex-col justify-center px-5 pb-12 pt-32 sm:px-8">
     <p class="reveal mb-6 inline-flex w-fit items-center gap-3 rounded-sm border border-white/15 bg-white/5 px-4 py-2 text-xs font-medium uppercase tracking-[.18em] text-white/85 backdrop-blur">
-      <span class="live-dot" aria-hidden="true"></span>RMC · Pavers · Infrastructure <span class="hidden text-white/40 sm:inline">|</span> <span class="hidden sm:inline">Panvel, Maharashtra</span>
+      <span class="live-dot" aria-hidden="true"></span><span data-cms="home.badge">RMC · AAC Blocks · Pavers</span> <span class="hidden text-white/40 sm:inline">|</span> <span class="hidden sm:inline" data-cms="home.badge_location">Navi Mumbai, Maharashtra</span>
     </p>
 
-    <h1 class="display hero-title reveal" style="--rd:120ms" aria-label="We build roads, plants, structures, the future.">
-      <span class="block" aria-hidden="true">We build</span>
-      <span class="typed-line" aria-hidden="true"><span id="typed" class="text-grad">ROADS</span><span class="caret"></span></span>
+    <h1 class="display hero-title reveal" style="--rd:120ms">
+      <span data-cms="home.headline">We manufacture construction material</span>
+      <span class="text-grad block" data-cms="home.headline_accent">to build the future.</span>
     </h1>
 
     <p class="reveal mt-6 flex items-center gap-3 whitespace-nowrap font-display text-lg font-bold uppercase tracking-[.1em] text-white sm:gap-4 sm:text-3xl sm:tracking-[.14em]" style="--rd:240ms">
-      <span class="h-[3px] w-8 flex-none bg-grad sm:w-12" aria-hidden="true"></span>Built to Rise. Built to Last.
+      <span class="h-[3px] w-8 flex-none bg-grad sm:w-12" aria-hidden="true"></span><span data-cms="home.tagline">Built to Rise. Built to Last.</span>
     </p>
-    <p class="reveal mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg" style="--rd:340ms">
-      Precision-batched Ready-Mix Concrete, high-strength paver blocks and dependable construction materials, engineered in Panvel and delivered across Raigad &amp; Navi Mumbai.
-    </p>
+    <p class="reveal mt-5 max-w-3xl text-base leading-relaxed text-white/75 sm:text-lg" style="--rd:340ms" data-cms="home.intro">Precision-batched ready-mix concrete, high-strength concrete, special concrete, high-retention concrete, lightweight concrete, foam concrete, ice concrete, temperature-controlled concrete, micro concrete, high-rise pumping concrete up to 70 floors, dry bag concrete, wet bag concrete, ready-mix plaster, tile adhesive, AAC blocks, windows, doors and paver blocks, engineered to deliver across Mumbai, Navi Mumbai and Raigad.</p>
 
     <div class="reveal mt-9 flex flex-wrap gap-4" style="--rd:440ms">
       <a href="#contact" class="btn btn-primary">Get a Quote
@@ -645,24 +670,19 @@
     </div>
   </div>
 
-  <!-- Stat counters — placeholder figures: edit data-count values to match real numbers -->
   <div class="stats reveal relative" style="--rd:560ms">
-    <dl class="mx-auto grid max-w-[1400px] grid-cols-2 px-1 sm:px-4 md:grid-cols-4">
-      <div class="stat px-4 py-5 sm:px-7 sm:py-6">
-        <dd class="display text-4xl sm:text-5xl"><span data-count="250000">0</span><span class="text-rise-orange">+</span></dd>
-        <dt class="mt-1.5 text-[.7rem] font-medium uppercase tracking-[.16em] text-white/65 sm:text-xs">m³ Concrete Delivered</dt>
-      </div>
-      <div class="stat px-4 py-5 sm:px-7 sm:py-6">
-        <dd class="display text-4xl sm:text-5xl"><span data-count="120">0</span><span class="text-rise-orange">+</span></dd>
-        <dt class="mt-1.5 text-[.7rem] font-medium uppercase tracking-[.16em] text-white/65 sm:text-xs">Projects Supplied</dt>
-      </div>
+    <dl class="mx-auto grid max-w-[1400px] grid-cols-2 px-1 sm:px-4 md:grid-cols-3" data-cms-list="home.stats" data-cms-as="stats">
       <div class="stat px-4 py-5 sm:px-7 sm:py-6">
         <dd class="display text-4xl sm:text-5xl"><span data-count="2">0</span></dd>
         <dt class="mt-1.5 text-[.7rem] font-medium uppercase tracking-[.16em] text-white/65 sm:text-xs">Batching Plants</dt>
       </div>
       <div class="stat px-4 py-5 sm:px-7 sm:py-6">
-        <dd class="display text-4xl sm:text-5xl"><span data-count="10">0</span><span class="text-rise-orange">+</span></dd>
+        <dd class="display text-4xl sm:text-5xl"><span data-count="22">0</span><span class="text-rise-orange">+</span></dd>
         <dt class="mt-1.5 text-[.7rem] font-medium uppercase tracking-[.16em] text-white/65 sm:text-xs">Years of Expertise</dt>
+      </div>
+      <div class="stat px-4 py-5 sm:px-7 sm:py-6">
+        <dd class="display text-4xl sm:text-5xl"><span data-count="20">0</span><span class="text-rise-orange">+</span></dd>
+        <dt class="mt-1.5 text-[.7rem] font-medium uppercase tracking-[.16em] text-white/65 sm:text-xs">Products</dt>
       </div>
     </dl>
   </div>
@@ -670,9 +690,9 @@
 
 <!-- Keyword marquee -->
 <div class="marquee overflow-hidden" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Ready-Mix Concrete</span><span>Paver Blocks</span><span>Infrastructure &amp; Roads</span><span>Material Supply</span><span>QA/QC Lab</span><span>Transit Mixers</span><span>Built to Rise. Built to Last.</span>
-    <span>Ready-Mix Concrete</span><span>Paver Blocks</span><span>Infrastructure &amp; Roads</span><span>Material Supply</span><span>QA/QC Lab</span><span>Transit Mixers</span><span>Built to Rise. Built to Last.</span>
+  <div class="marquee-track" data-cms-list="home.marquee" data-cms-as="marquee">
+    <span>Ready-Mix Concrete</span><span>Bag Concrete</span><span>Ready-Mix Plaster</span><span>Tile Adhesive</span><span>AAC Blocks</span><span>Windows &amp; Doors</span><span>Paver Blocks</span><span>Built to Rise. Built to Last.</span>
+    <span>Ready-Mix Concrete</span><span>Bag Concrete</span><span>Ready-Mix Plaster</span><span>Tile Adhesive</span><span>AAC Blocks</span><span>Windows &amp; Doors</span><span>Paver Blocks</span><span>Built to Rise. Built to Last.</span>
   </div>
 </div>
 
@@ -681,26 +701,25 @@
   <div class="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
     <div>
       <p class="eyebrow reveal">Who we are</p>
-      <h2 class="display section-title reveal mt-4" style="--rd:80ms">Concrete strength.<br><span class="text-grad">Rooted in Panvel.</span></h2>
-      <p class="reveal mt-6 text-lg leading-relaxed" style="--rd:160ms">
-        RISE INFRATECH is an infrastructure and construction-materials company based in Panvel, Raigad. From our plant at Village Dhamni we batch and deliver Ready-Mix Concrete, manufacture paver blocks, supply core building materials and execute road and infrastructure works across Raigad and Navi Mumbai.
-      </p>
+      <h2 class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="about.heading">Construction material strength</span><br><span class="text-grad" data-cms="about.heading_accent">rooted in Navi Mumbai.</span></h2>
+      <p class="reveal mt-6 text-lg leading-relaxed" style="--rd:160ms" data-cms="about.body">RISE INFRATECH is a construction material manufacturing company based in Navi Mumbai. From our plants at Village Arivali and Nigade we deliver ready-mix concrete, high-strength concrete, special concrete, high-retention concrete, lightweight concrete, foam concrete, ice concrete, temperature-controlled concrete, micro concrete, high-rise pumping concrete up to 70 floors, dry bag concrete, wet bag concrete, ready-mix plaster, tile adhesive, AAC blocks, windows, doors and paver blocks to our clients in Mumbai, Navi Mumbai and Raigad.</p>
 
       <div class="mt-9 grid gap-6 sm:grid-cols-2">
         <div class="ethos reveal pl-5" style="--rd:220ms">
-          <h3 class="display text-2xl text-heading">Our Mission</h3>
-          <p class="mt-2 text-[.95rem] leading-relaxed">To give every builder, from a single bungalow to a highway package, concrete and materials they never have to second-guess: the right grade, at the right time, every time.</p>
+          <h3 class="display text-2xl text-heading">Our Vision</h3>
+          <p class="mt-2 text-[.95rem] leading-relaxed" data-cms="about.vision">To transform the construction life cycle by providing a seamless, one-stop portfolio of next-generation materials that accelerate building timelines, minimise on-site waste and deliver unmatched structural durability.</p>
         </div>
         <div class="ethos reveal pl-5" style="--rd:300ms">
-          <h3 class="display text-2xl text-heading">Built to Last</h3>
-          <p class="mt-2 text-[.95rem] leading-relaxed">We measure our work in decades, not deliveries. Every mix is designed, batched and tested so the structures it becomes stand long after the pour is forgotten.</p>
+          <h3 class="display text-2xl text-heading">Our Mission</h3>
+          <p class="mt-2 text-[.95rem] leading-relaxed" data-cms="about.mission">To manufacture and deliver the highest grade of foundational and architectural materials, guaranteeing structural integrity through our ready-mix solutions and exceptional craftsmanship in our AAC blocks, FRP doors, windows and paver blocks, built to last a lifetime.</p>
         </div>
       </div>
 
-      <ul class="reveal mt-9 space-y-3 text-[.95rem] font-medium text-heading" style="--rd:380ms">
-        <li class="flex items-center gap-3"><span class="grid h-6 w-6 flex-none place-items-center rounded-sm bg-grad text-white"><svg class="ico h-3.5 w-3.5" style="stroke-width:3" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span>Computerised batching with consistent, documented mix designs</li>
-        <li class="flex items-center gap-3"><span class="grid h-6 w-6 flex-none place-items-center rounded-sm bg-grad text-white"><svg class="ico h-3.5 w-3.5" style="stroke-width:3" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span>In-house QA/QC laboratory testing every batch</li>
-        <li class="flex items-center gap-3"><span class="grid h-6 w-6 flex-none place-items-center rounded-sm bg-grad text-white"><svg class="ico h-3.5 w-3.5" style="stroke-width:3" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span>Own transit-mixer fleet for on-time, uninterrupted pours</li>
+      <ul class="reveal mt-9 space-y-3 text-[.95rem] font-medium text-heading" style="--rd:380ms" data-cms-list="about.points" data-cms-as="checks">
+        <li class="flex items-start gap-3"><span class="grid h-6 w-6 flex-none place-items-center rounded-sm bg-grad text-white"><svg class="ico h-3.5 w-3.5" style="stroke-width:3" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Automated computerised batching with consistent, documented mix designs</span></li>
+        <li class="flex items-start gap-3"><span class="grid h-6 w-6 flex-none place-items-center rounded-sm bg-grad text-white"><svg class="ico h-3.5 w-3.5" style="stroke-width:3" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>In-house QA/QC laboratory testing every batch</span></li>
+        <li class="flex items-start gap-3"><span class="grid h-6 w-6 flex-none place-items-center rounded-sm bg-grad text-white"><svg class="ico h-3.5 w-3.5" style="stroke-width:3" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>Own transit-mixer fleet for on-time, uninterrupted pours</span></li>
+        <li class="flex items-start gap-3"><span class="grid h-6 w-6 flex-none place-items-center rounded-sm bg-grad text-white"><svg class="ico h-3.5 w-3.5" style="stroke-width:3" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span><span>ISI certified AAC blocks, ready-mix dry concrete, ready-mix plaster, tile adhesive etc.</span></li>
       </ul>
     </div>
 
@@ -724,12 +743,12 @@
               <path d="M262 206h36l-5 14h-26zM6 220h294"/>
             </g>
           </svg>
-          <p class="absolute left-[7%] top-[5%] font-display text-xs font-semibold uppercase tracking-[.34em] text-white/60">Dhamni Plant · Panvel</p>
+          <p class="absolute left-[7%] top-[5%] font-display text-xs font-semibold uppercase tracking-[.34em] text-white/60" data-cms="about.plant_label">Arivali Plant · Navi Mumbai</p>
           <p class="display absolute bottom-[6%] right-[6%] z-[3] text-right text-[clamp(1.3rem,3.4vw,2rem)] text-rise-navy">Built to Rise.<br>Built to Last.</p>
         </div>
         <div class="float-badge -left-3 bottom-[16%] sm:-left-10">
           <span class="grid h-11 w-11 place-items-center rounded-sm bg-grad text-white"><svg class="ico h-6 w-6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cpu"/></svg></span>
-          <span><strong class="display block text-xl leading-none">Computerised</strong><span class="text-xs text-body">weigh-batching control</span></span>
+          <span><strong class="display block text-xl leading-none">Automated</strong><span class="text-xs text-body">computerised batching</span></span>
         </div>
         <div class="float-badge b2 -right-2 top-[9%] sm:-right-8">
           <span class="grid h-11 w-11 place-items-center rounded-sm bg-rise-navy text-rise-gold"><svg class="ico h-6 w-6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask"/></svg></span>
@@ -746,64 +765,91 @@
     <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
       <div>
         <p class="eyebrow reveal">What we do</p>
-        <h2 class="display section-title reveal mt-4" style="--rd:80ms">Six services.<br><span class="text-grad">One standard.</span></h2>
+        <h2 class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="services.heading">Nine services.</span><br><span class="text-grad" data-cms="services.heading_accent">One standard.</span></h2>
       </div>
-      <p class="reveal max-w-md text-lg leading-relaxed" style="--rd:160ms">From the first truck of aggregate to the final cube-test report, everything a project needs from the ground up comes from one accountable partner.</p>
+      <p class="reveal max-w-md text-lg leading-relaxed" style="--rd:160ms" data-cms="services.intro">From the first cubic metre of concrete to the last door and window, everything a project needs comes from one accountable manufacturer.</p>
     </div>
 
-    <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3" data-cms-list="services.items" data-cms-as="cards">
       <div class="reveal" style="--rd:0ms"><article class="svc"><div class="svc-inner">
         <span class="display svc-no" aria-hidden="true">01</span>
         <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-truck"/></svg></div>
         <h3 class="display mt-6 text-[1.7rem] text-heading">Ready-Mix Concrete</h3>
-        <p class="mt-3 text-[.95rem] leading-relaxed">Design-mix and nominal-mix concrete from M10 to M60, batched by computer and delivered by our own transit-mixer fleet, with pumping support for high-rise and mass pours.</p>
-        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">M10 – M60</span><span class="tag">Pumpable mixes</span><span class="tag">Special concretes</span></p>
+        <p class="mt-3 text-[.95rem] leading-relaxed">Design-mix concrete from M5 to M100, batched by automated computerised plants: high-strength, high-retention, lightweight, foam, ice, temperature-controlled and micro concrete, with high-rise pumping up to 70 floors.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">M5 – M100</span><span class="tag">Special concretes</span><span class="tag">Pumping up to 70 floors</span></p>
         <a href="#contact" class="svc-link" data-service="Ready-Mix Concrete">Enquire<span class="sr-only"> about Ready-Mix Concrete</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div></article></div>
 
       <div class="reveal" style="--rd:90ms"><article class="svc"><div class="svc-inner">
         <span class="display svc-no" aria-hidden="true">02</span>
-        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pavers"/></svg></div>
-        <h3 class="display mt-6 text-[1.7rem] text-heading">Paver Blocks &amp; Lacquer</h3>
-        <p class="mt-3 text-[.95rem] leading-relaxed">High-compression interlocking pavers in multiple shapes, thicknesses and colours, finished with a protective lacquer coat for lasting gloss, stain resistance and colour retention.</p>
-        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">60 / 80 / 100 mm</span><span class="tag">Zig-zag · I-shape</span><span class="tag">Lacquer finish</span></p>
-        <a href="#contact" class="svc-link" data-service="Paver Blocks &amp; Lacquer">Enquire<span class="sr-only"> about Paver Blocks and Lacquer</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bag"/></svg></div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">Dry Ready-Mix Bag Concrete</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">Factory-blended dry concrete in bags. Add water on site and get the same consistent proportions for repairs, small pours and hard-to-reach locations.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">ISI certified</span><span class="tag">Bagged</span><span class="tag">Just add water</span></p>
+        <a href="#contact" class="svc-link" data-service="Dry Ready-Mix Bag Concrete">Enquire<span class="sr-only"> about Dry Ready-Mix Bag Concrete</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div></article></div>
 
       <div class="reveal" style="--rd:180ms"><article class="svc"><div class="svc-inner">
         <span class="display svc-no" aria-hidden="true">03</span>
-        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-road"/></svg></div>
-        <h3 class="display mt-6 text-[1.7rem] text-heading">Infrastructure &amp; Roads</h3>
-        <p class="mt-3 text-[.95rem] leading-relaxed">Concrete and paver roads, internal layouts, industrial flooring, drains and site development, executed end-to-end with our own material and machinery.</p>
-        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">CC / PQC roads</span><span class="tag">Industrial flooring</span><span class="tag">Site development</span></p>
-        <a href="#contact" class="svc-link" data-service="Infrastructure &amp; Roads">Enquire<span class="sr-only"> about Infrastructure and Roads</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-box"/></svg></div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">Wet Ready-Mix Bag Concrete</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">Plant-batched concrete supplied in bags for small volumes and restricted-access sites where a transit mixer cannot reach.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">Plant-batched</span><span class="tag">Small volumes</span><span class="tag">Restricted access</span></p>
+        <a href="#contact" class="svc-link" data-service="Wet Ready-Mix Bag Concrete">Enquire<span class="sr-only"> about Wet Ready-Mix Bag Concrete</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div></article></div>
 
       <div class="reveal" style="--rd:0ms"><article class="svc"><div class="svc-inner">
         <span class="display svc-no" aria-hidden="true">04</span>
-        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layers"/></svg></div>
-        <h3 class="display mt-6 text-[1.7rem] text-heading">Material Supply</h3>
-        <p class="mt-3 text-[.95rem] leading-relaxed">Dependable bulk supply of aggregates, crushed sand, cement, fly-ash, GGBS and admixtures, quality-checked at source and delivered to site on schedule.</p>
-        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">Aggregates &amp; sand</span><span class="tag">Cement · Fly-ash · GGBS</span><span class="tag">Admixtures</span></p>
-        <a href="#contact" class="svc-link" data-service="Material Supply">Enquire<span class="sr-only"> about Material Supply</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trowel"/></svg></div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">Ready-Mix Plaster</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">Pre-mixed plaster with graded sand and additives for smooth, crack-resistant internal and external walls, with far less wastage than site mixing.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">ISI certified</span><span class="tag">Internal &amp; external</span><span class="tag">Low wastage</span></p>
+        <a href="#contact" class="svc-link" data-service="Ready-Mix Plaster">Enquire<span class="sr-only"> about Ready-Mix Plaster</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div></article></div>
 
       <div class="reveal" style="--rd:90ms"><article class="svc"><div class="svc-inner">
         <span class="display svc-no" aria-hidden="true">05</span>
-        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-factory"/></svg></div>
-        <h3 class="display mt-6 text-[1.7rem] text-heading">Plant &amp; Machinery</h3>
-        <p class="mt-3 text-[.95rem] leading-relaxed">Batching plants, transit mixers, concrete pumps, loaders and paving equipment, available with trained operators to keep your project moving.</p>
-        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">Transit mixers</span><span class="tag">Concrete pumps</span><span class="tag">Loaders &amp; pavers</span></p>
-        <a href="#contact" class="svc-link" data-service="Plant &amp; Machinery">Enquire<span class="sr-only"> about Plant and Machinery</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tile"/></svg></div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">Tile Adhesive</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">Polymer-modified adhesive for ceramic, vitrified and stone tiles on floors and walls, giving a strong bond and a long open time.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">ISI certified</span><span class="tag">Floor &amp; wall</span><span class="tag">Tile &amp; stone</span></p>
+        <a href="#contact" class="svc-link" data-service="Tile Adhesive">Enquire<span class="sr-only"> about Tile Adhesive</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div></article></div>
 
       <div class="reveal" style="--rd:180ms"><article class="svc"><div class="svc-inner">
         <span class="display svc-no" aria-hidden="true">06</span>
-        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask"/></svg></div>
-        <h3 class="display mt-6 text-[1.7rem] text-heading">Quality Assurance <span class="whitespace-nowrap">(QA/QC Lab)</span></h3>
-        <p class="mt-3 text-[.95rem] leading-relaxed">Our in-house laboratory tests raw materials, fresh concrete and hardened cubes as per IS codes, with batch-wise reports and full traceability for every pour.</p>
-        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">Slump &amp; cube tests</span><span class="tag">Mix design</span><span class="tag">Batch reports</span></p>
-        <a href="#contact" class="svc-link" data-service="Quality Assurance (QA/QC Lab)">Enquire<span class="sr-only"> about Quality Assurance</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-block"/></svg></div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">AAC Blocks</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">Lightweight autoclaved aerated concrete blocks that build faster, insulate better and reduce the dead load on the structure.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">ISI certified</span><span class="tag">Lightweight</span><span class="tag">Thermal insulation</span></p>
+        <a href="#contact" class="svc-link" data-service="AAC Blocks">Enquire<span class="sr-only"> about AAC Blocks</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div></article></div>
+
+      <div class="reveal" style="--rd:0ms"><article class="svc"><div class="svc-inner">
+        <span class="display svc-no" aria-hidden="true">07</span>
+        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-window"/></svg></div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">Aluminium &amp; uPVC Windows</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">Made-to-measure aluminium and uPVC window systems with weather-tight sealing, smooth operation and low maintenance.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">Aluminium</span><span class="tag">uPVC</span><span class="tag">Made to measure</span></p>
+        <a href="#contact" class="svc-link" data-service="Aluminium &amp; uPVC Windows">Enquire<span class="sr-only"> about Aluminium and uPVC Windows</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div></article></div>
+
+      <div class="reveal" style="--rd:90ms"><article class="svc"><div class="svc-inner">
+        <span class="display svc-no" aria-hidden="true">08</span>
+        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-door"/></svg></div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">Doors &amp; Windows (FRP / Aluminium)</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">FRP and aluminium doors and windows that resist moisture, termites and corrosion, suited to coastal and high-humidity conditions.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">FRP</span><span class="tag">Aluminium</span><span class="tag">Moisture resistant</span></p>
+        <a href="#contact" class="svc-link" data-service="Doors &amp; Windows (FRP / Aluminium)">Enquire<span class="sr-only"> about Doors and Windows (FRP / Aluminium)</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div></article></div>
+
+      <div class="reveal" style="--rd:180ms"><article class="svc"><div class="svc-inner">
+        <span class="display svc-no" aria-hidden="true">09</span>
+        <div class="svc-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pavers"/></svg></div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">Paver Blocks</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">High-compression interlocking paver blocks in multiple shapes, thicknesses and colours for roads, yards, parking and walkways.</p>
+        <p class="mt-5 flex flex-wrap gap-2"><span class="tag">60 / 80 / 100 mm</span><span class="tag">Interlocking</span><span class="tag">Heavy duty</span></p>
+        <a href="#contact" class="svc-link" data-service="Paver Blocks">Enquire<span class="sr-only"> about Paver Blocks</span><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div></article></div>
     </div>
   </div>
@@ -818,15 +864,23 @@
   <div class="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
     <div>
       <p class="eyebrow reveal">Plant &amp; Capabilities</p>
-      <h2 class="display section-title reveal mt-4" style="--rd:80ms">Engineered for <span class="text-grad">volume.</span><br>Tuned for precision.</h2>
-      <p class="reveal mt-6 text-lg leading-relaxed text-white/70" style="--rd:160ms">Our Dhamni plant pairs computer-controlled batching with an in-house lab and a dedicated fleet, so large pours stay continuous and every cubic metre meets its mix design.</p>
+      <h2 class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="plant.heading">Engineered for volume.</span><br><span class="text-grad" data-cms="plant.heading_accent">Tuned for precision.</span></h2>
+      <p class="reveal mt-6 text-lg leading-relaxed text-white/70" style="--rd:160ms" data-cms="plant.intro">Our Arivali plant pairs automated, computer-controlled batching with an in-house lab and a dedicated fleet, so large pours stay continuous and every cubic metre meets its mix design.</p>
 
-      <ul class="mt-9 grid gap-3 sm:grid-cols-2">
+      <div class="loc-badge reveal mt-8" style="--rd:200ms">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map"/></svg>
+        <p>
+          <span class="block font-display text-xs font-bold uppercase tracking-[.24em] text-rise-gold" data-cms="plant.location_label">Plant location</span>
+          <span class="display mt-1.5 block text-[clamp(1.6rem,3.6vw,2.2rem)] leading-none"><span class="text-grad" data-cms="plant.location_highlight">Within 25 min</span> <span data-cms="plant.location_text">from Atal Setu toll</span></span>
+        </p>
+      </div>
+
+      <ul class="mt-8 grid gap-3 sm:grid-cols-2" data-cms-list="plant.capabilities" data-cms-as="caps">
         <li class="reveal" style="--rd:0ms"><span class="cap-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cpu"/></svg>Computerised SCADA batching</span></li>
         <li class="reveal" style="--rd:70ms"><span class="cap-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask"/></svg>In-house QA/QC laboratory</span></li>
         <li class="reveal" style="--rd:140ms"><span class="cap-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-gps"/></svg>GPS-tracked transit mixers</span></li>
         <li class="reveal" style="--rd:210ms"><span class="cap-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pump"/></svg>Concrete pumps &amp; placers</span></li>
-        <li class="reveal" style="--rd:280ms"><span class="cap-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-grade"/></svg>Grades M10 to M60</span></li>
+        <li class="reveal" style="--rd:280ms"><span class="cap-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-grade"/></svg>Grades M5 to M100</span></li>
         <li class="reveal" style="--rd:350ms"><span class="cap-badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clock"/></svg>Round-the-clock dispatch</span></li>
       </ul>
       <a href="#contact" class="btn btn-primary reveal mt-10" style="--rd:200ms">Book a Plant Visit<svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
@@ -842,7 +896,7 @@
               <circle class="ring-track" cx="60" cy="60" r="46" fill="none" stroke-width="9"/>
               <circle class="ring-fill" style="--v:75" cx="60" cy="60" r="46" fill="none" stroke="url(#gradStroke)" stroke-width="9" stroke-linecap="butt" pathLength="100"/>
             </svg>
-            <p class="display absolute inset-0 grid place-content-center text-center text-4xl leading-none"><span data-count="60">0</span><span class="mt-1 block font-sans text-[.62rem] font-medium normal-case tracking-[.12em] text-white/60">m³ / hr</span></p>
+            <p class="display absolute inset-0 grid place-content-center text-center text-4xl leading-none"><span data-count="60" data-cms-count="plant.batching_capacity">0</span><span class="mt-1 block font-sans text-[.62rem] font-medium normal-case tracking-[.12em] text-white/60">m³ / hr</span></p>
           </div>
           <div><h3 class="display text-2xl">Batching Capacity</h3><p class="mt-1.5 text-sm leading-relaxed text-white/65">Twin-shaft mixer output for continuous mass pours.</p></div>
         </div>
@@ -853,7 +907,7 @@
               <circle class="ring-track" cx="60" cy="60" r="46" fill="none" stroke-width="9"/>
               <circle class="ring-fill" style="--v:62" cx="60" cy="60" r="46" fill="none" stroke="url(#gradStroke)" stroke-width="9" pathLength="100"/>
             </svg>
-            <p class="display absolute inset-0 grid place-content-center text-center text-4xl leading-none"><span><span data-count="15">0</span><span class="text-rise-orange">+</span></span><span class="mt-1 block font-sans text-[.62rem] font-medium normal-case tracking-[.12em] text-white/60">vehicles</span></p>
+            <p class="display absolute inset-0 grid place-content-center text-center text-4xl leading-none"><span><span data-count="15" data-cms-count="plant.fleet_size">0</span><span class="text-rise-orange">+</span></span><span class="mt-1 block font-sans text-[.62rem] font-medium normal-case tracking-[.12em] text-white/60">vehicles</span></p>
           </div>
           <div><h3 class="display text-2xl">Transit-Mixer Fleet</h3><p class="mt-1.5 text-sm leading-relaxed text-white/65">Owned, GPS-tracked mixers of 6–7 m³ each.</p></div>
         </div>
@@ -873,45 +927,45 @@
       </div>
     </div>
   </div>
-</section>
 
-<!-- ============ 6. PROCESS STRIP ============ -->
-<section id="process" class="bg-page py-20 lg:py-28" aria-labelledby="processTitle">
-  <div class="mx-auto max-w-7xl px-5 sm:px-8">
-    <div class="mx-auto max-w-2xl lg:text-center">
-      <p class="eyebrow reveal">The RMC lifecycle</p>
-      <h2 id="processTitle" class="display section-title reveal mt-4" style="--rd:80ms">From quarry to <span class="text-grad">pour.</span></h2>
-      <p class="reveal mt-5 text-lg leading-relaxed" style="--rd:160ms">Five controlled stages stand between raw material and the concrete in your structure. Nothing leaves the plant until every one is signed off.</p>
+  <!-- From quarry to pour: the RMC lifecycle, part of Plant & Capabilities -->
+  <div id="process" class="process-dark mx-auto mt-20 max-w-7xl px-5 sm:px-8 lg:mt-24">
+    <div class="border-t border-white/10 pt-16 lg:pt-20">
+      <div class="mx-auto max-w-2xl lg:text-center">
+        <p class="eyebrow reveal">The RMC lifecycle</p>
+        <h3 class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="plant.process_heading">From quarry to</span> <span class="text-grad" data-cms="plant.process_heading_accent">pour.</span></h3>
+        <p class="reveal mt-5 text-lg leading-relaxed text-white/70" style="--rd:160ms" data-cms="plant.process_intro">Five controlled stages stand between raw material and the concrete in your structure. Nothing leaves the plant until every one is signed off.</p>
+      </div>
+
+      <ol class="process reveal mt-16" id="processSteps" data-cms-list="plant.process" data-cms-as="steps">
+        <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
+          <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-box"/></svg></div>
+          <div><span class="step-no">STEP 01</span><h4 class="display mt-1 text-2xl text-heading">Procurement</h4><p class="mt-2 text-sm leading-relaxed text-white/65">Aggregates, river sand, cement, fly-ash, GGBS and admixtures sourced from approved vendors and tested on arrival.</p></div></li>
+        <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
+          <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-silo"/></svg></div>
+          <div><span class="step-no">STEP 02</span><h4 class="display mt-1 text-2xl text-heading">Batching</h4><p class="mt-2 text-sm leading-relaxed text-white/65">Automated computerised weigh-batching doses every ingredient exactly to the approved mix design.</p></div></li>
+        <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
+          <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask"/></svg></div>
+          <div><span class="step-no">STEP 03</span><h4 class="display mt-1 text-2xl text-heading">QA/QC Lab</h4><p class="mt-2 text-sm leading-relaxed text-white/65">Slump, temperature and cube samples are taken from each batch before it is cleared for dispatch.</p></div></li>
+        <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
+          <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-truck"/></svg></div>
+          <div><span class="step-no">STEP 04</span><h4 class="display mt-1 text-2xl text-heading">Transit Mixer</h4><p class="mt-2 text-sm leading-relaxed text-white/65">GPS-tracked mixers keep the concrete agitated and on the clock, from plant gate to site gate.</p></div></li>
+        <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
+          <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg></div>
+          <div><span class="step-no">STEP 05</span><h4 class="display mt-1 text-2xl text-heading">Delivery</h4><p class="mt-2 text-sm leading-relaxed text-white/65">Placed by pump or chute, with batch tickets and test reports handed over at site.</p></div></li>
+      </ol>
     </div>
-
-    <ol class="process reveal mt-16" id="processSteps">
-      <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
-        <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-box"/></svg></div>
-        <div><span class="step-no">STEP 01</span><h3 class="display mt-1 text-2xl text-heading">Procurement</h3><p class="mt-2 text-sm leading-relaxed">Aggregates, cement, fly-ash, GGBS and admixtures sourced from approved vendors and tested on arrival.</p></div></li>
-      <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
-        <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-silo"/></svg></div>
-        <div><span class="step-no">STEP 02</span><h3 class="display mt-1 text-2xl text-heading">Batching</h3><p class="mt-2 text-sm leading-relaxed">Computerised weigh-batching doses every ingredient exactly to the approved mix design.</p></div></li>
-      <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
-        <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask"/></svg></div>
-        <div><span class="step-no">STEP 03</span><h3 class="display mt-1 text-2xl text-heading">QA/QC Lab</h3><p class="mt-2 text-sm leading-relaxed">Slump, temperature and cube samples are taken from each batch before it is cleared for dispatch.</p></div></li>
-      <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
-        <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-truck"/></svg></div>
-        <div><span class="step-no">STEP 04</span><h3 class="display mt-1 text-2xl text-heading">Transit Mixer</h3><p class="mt-2 text-sm leading-relaxed">GPS-tracked mixers keep the concrete agitated and on the clock, from plant gate to site gate.</p></div></li>
-      <li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
-        <div class="step-icon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg></div>
-        <div><span class="step-no">STEP 05</span><h3 class="display mt-1 text-2xl text-heading">Delivery</h3><p class="mt-2 text-sm leading-relaxed">Placed by pump or chute, with batch tickets and test reports handed over at site.</p></div></li>
-    </ol>
   </div>
 </section>
 
-<!-- ============ 7. PROJECTS ============ -->
+<!-- ============ 6. PROJECTS ============ -->
 <!-- Sample project cards: replace titles, locations and scope with real project data -->
 <section id="projects" class="overflow-hidden bg-alt py-20 lg:py-28" aria-labelledby="projTitle">
   <div class="mx-auto flex max-w-7xl flex-col justify-between gap-6 px-5 sm:px-8 md:flex-row md:items-end">
     <div>
       <p class="eyebrow reveal">Project showcase</p>
-      <h2 id="projTitle" class="display section-title reveal mt-4" style="--rd:80ms">Work that <span class="text-grad">carries weight.</span></h2>
-      <p class="reveal mt-4 max-w-xl text-lg leading-relaxed" style="--rd:160ms">A cross-section of the pours, pavements and supply contracts we deliver. Drag, swipe or use the arrows to explore.</p>
+      <h2 id="projTitle" class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="projects.heading">Work that</span> <span class="text-grad" data-cms="projects.heading_accent">carries weight.</span></h2>
+      <p class="reveal mt-4 max-w-xl text-lg leading-relaxed" style="--rd:160ms" data-cms="projects.intro">A cross-section of the pours, pavements and supply contracts we deliver. Drag, swipe or use the arrows to explore.</p>
     </div>
     <div class="reveal flex gap-3" style="--rd:200ms">
       <button type="button" class="car-btn" id="carPrev" aria-label="Previous projects" aria-controls="carousel"><svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-chev-l"/></svg></button>
@@ -920,7 +974,7 @@
   </div>
 
   <div class="reveal mt-10" style="--rd:120ms">
-    <ul class="carousel" id="carousel" role="list" aria-label="Projects">
+    <ul class="carousel" id="carousel" role="list" aria-label="Projects" data-cms-list="projects.items" data-cms-as="projects">
       <li class="proj" tabindex="0">
         <svg class="proj-art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
           <path class="ln" d="M60 300V130h72v170M152 300V74h84v226M256 300V156h74v144"/>
@@ -1004,16 +1058,15 @@
   </div>
 </section>
 
-<!-- ============ 8. SUSTAINABILITY / QUALITY ============ -->
+<!-- ============ 7. SUSTAINABILITY / QUALITY ============ -->
 <section id="sustainability" class="bg-page py-20 lg:py-28">
   <div class="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
     <div>
       <p class="eyebrow reveal">Sustainability &amp; Quality</p>
-      <h2 class="display section-title reveal mt-4" style="--rd:80ms">Greener mixes.<br><span class="text-grad">Longer lives.</span></h2>
-      <p class="reveal mt-6 text-lg leading-relaxed" style="--rd:160ms">The most sustainable structure is the one that never needs rebuilding. We replace a share of cement with fly-ash and GGBS, industrial by-products that cut embodied carbon while making concrete denser, cooler-curing and more resistant to the chlorides and sulphates of the Konkan coast.</p>
+      <h2 class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="sustainability.heading">Greener mixes.</span><br><span class="text-grad" data-cms="sustainability.heading_accent">Longer lives.</span></h2>
+      <p class="reveal mt-6 text-lg leading-relaxed" style="--rd:160ms" data-cms="sustainability.body">The most sustainable structure is the one that never needs rebuilding. We replace a share of cement with fly-ash and GGBS, industrial by-products that cut embodied carbon while making concrete denser, cooler-curing and more resistant to the chlorides and sulphates of the Konkan coast.</p>
 
-      <!-- Placeholder figures: edit data-count values -->
-      <div class="mt-9 grid gap-4 sm:grid-cols-3">
+      <div class="mt-9 grid gap-4 sm:grid-cols-3" data-cms-list="sustainability.stats" data-cms-as="green">
         <div class="green-stat reveal" style="--rd:0ms">
           <svg class="ico leaf-sway h-7 w-7 text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-leaf"/></svg>
           <p class="display mt-3 text-4xl text-heading"><span class="text-base font-semibold normal-case tracking-normal">up to </span><span data-count="35">0</span>%</p>
@@ -1026,8 +1079,8 @@
         </div>
         <div class="green-stat reveal" style="--rd:200ms">
           <svg class="ico h-7 w-7 text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask"/></svg>
-          <p class="display mt-3 text-4xl text-heading"><span data-count="7">0</span> &amp; <span data-count="28">0</span></p>
-          <p class="mt-1 text-sm leading-snug">day cube-strength tests on every grade</p>
+          <p class="display mt-3 text-[1.7rem] leading-[1.15] text-heading">3, 7, 28 &amp; 56</p>
+          <p class="mt-1 text-sm leading-snug">days cube-strength tests on every grade</p>
         </div>
       </div>
     </div>
@@ -1055,25 +1108,25 @@
 
       <hr class="my-7 border-line">
       <h4 class="font-display text-sm font-bold uppercase tracking-[.2em] text-rise-orange">Tested at every stage</h4>
-      <ul class="mt-4 grid gap-3 text-[.92rem] font-medium text-heading sm:grid-cols-2">
+      <ul class="mt-4 grid gap-3 text-[.92rem] font-medium text-heading sm:grid-cols-2" data-cms-list="sustainability.checks" data-cms-as="ticks">
         <li class="flex items-center gap-2.5"><svg class="ico h-5 w-5 flex-none text-rise-orange" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Aggregate grading &amp; moisture</li>
         <li class="flex items-center gap-2.5"><svg class="ico h-5 w-5 flex-none text-rise-orange" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Slump &amp; temperature per batch</li>
-        <li class="flex items-center gap-2.5"><svg class="ico h-5 w-5 flex-none text-rise-orange" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>7 &amp; 28-day cube strength</li>
+        <li class="flex items-center gap-2.5"><svg class="ico h-5 w-5 flex-none text-rise-orange" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>3, 7, 28 &amp; 56-day cube strength</li>
         <li class="flex items-center gap-2.5"><svg class="ico h-5 w-5 flex-none text-rise-orange" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Mix designs as per IS 10262</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ 9. WHY RISE ============ -->
+<!-- ============ 8. WHY RISE ============ -->
 <section id="why" class="bg-alt py-20 lg:py-28">
   <div class="mx-auto max-w-7xl px-5 sm:px-8">
     <div class="mx-auto max-w-2xl text-center">
       <p class="eyebrow reveal">Why RISE</p>
-      <h2 class="display section-title reveal mt-4" style="--rd:80ms">Four pillars. <span class="text-grad">Zero shortcuts.</span></h2>
+      <h2 class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="why.heading">Four pillars.</span> <span class="text-grad" data-cms="why.heading_accent">Zero shortcuts.</span></h2>
     </div>
 
-    <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-4" data-cms-list="why.pillars" data-cms-as="pillars">
       <div class="reveal" style="--rd:0ms"><article class="pillar">
         <svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path class="a-pulse" d="M32 6l20 7v15c0 12-8 22-20 26-12-4-20-14-20-26V13l20-7z"/>
@@ -1097,7 +1150,7 @@
           <g class="a-spin rev" stroke="#F58220"><circle cx="47" cy="46" r="10" stroke-width="5" stroke-dasharray="4.500 4.476"/><circle cx="47" cy="46" r="6.500" stroke-width="2.600"/></g>
         </svg>
         <h3 class="display mt-6 text-[1.6rem] text-heading">End-to-End Capability</h3>
-        <p class="mt-3 text-[.95rem] leading-relaxed">Concrete, pavers, materials, machinery and execution under one roof means one call and one accountable partner.</p>
+        <p class="mt-3 text-[.95rem] leading-relaxed">Concrete, plaster, tile adhesive, AAC blocks, pavers, doors and windows under one roof means one call and one accountable partner.</p>
       </article></div>
       <div class="reveal" style="--rd:300ms"><article class="pillar">
         <svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1114,20 +1167,20 @@
   </div>
 </section>
 
-<!-- ============ 10. CAREERS ============ -->
+<!-- ============ 9. CAREERS ============ -->
 <section id="careers" class="bg-page py-20 lg:py-28">
   <div class="mx-auto max-w-7xl px-5 sm:px-8">
     <div class="careers-panel reveal grid gap-10 p-8 sm:p-12 lg:grid-cols-[1.15fr_.85fr] lg:p-16" data-reveal="zoom">
       <div>
         <p class="eyebrow">Careers</p>
-        <h2 class="display mt-4 text-[clamp(2.3rem,5vw,3.9rem)] text-white">Build your career<br><span class="text-grad">from the ground up.</span></h2>
-        <p class="mt-5 max-w-lg text-lg leading-relaxed text-white/75">We're growing, and we hire people who take pride in work that lasts: plant operators, QA/QC technicians, transit-mixer drivers, site engineers and sales professionals.</p>
+        <h2 class="display mt-4 text-[clamp(2.3rem,5vw,3.9rem)] text-white"><span data-cms="careers.heading">Build your career</span><br><span class="text-grad" data-cms="careers.heading_accent">from the ground up.</span></h2>
+        <p class="mt-5 max-w-lg text-lg leading-relaxed text-white/75" data-cms="careers.intro">We're growing, and we hire people who take pride in work that lasts: plant operators, QA/QC technicians, transit-mixer drivers, site engineers and sales professionals.</p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="mailto:admin@riseinfratech.in?subject=Career%20enquiry%20-%20RISE%20INFRATECH" class="btn btn-primary">Send Your Résumé<svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a href="mailto:admin@riseinfratech.in?subject=Career%20enquiry%20-%20RISE%20INFRATECH" class="btn btn-primary" data-cms-attr="href=mailto:{careers.email}?subject=Career%20enquiry%20-%20RISE%20INFRATECH">Send Your Résumé<svg class="ico" style="stroke-width:2.4" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a href="#contact" class="btn btn-ghost">Talk to Us</a>
         </div>
       </div>
-      <ul class="flex flex-wrap content-center items-center gap-3 pb-24 lg:justify-end lg:pb-0" aria-label="Roles we hire for">
+      <ul class="flex flex-wrap content-center items-center gap-3 pb-24 lg:justify-end lg:pb-0" aria-label="Roles we hire for" data-cms-list="careers.roles" data-cms-as="roles">
         <li class="role-chip" style="--i:0">Plant Operators</li>
         <li class="role-chip" style="--i:1">QA/QC Technicians</li>
         <li class="role-chip" style="--i:2">Transit-Mixer Drivers</li>
@@ -1138,56 +1191,89 @@
   </div>
 </section>
 
-<!-- ============ 10b. LEADERSHIP ============ -->
+<!-- ============ 10. LEADERSHIP ============ -->
 <section id="leadership" class="bg-alt py-20 lg:py-28">
   <div class="mx-auto max-w-7xl px-5 sm:px-8">
     <div class="mx-auto max-w-2xl text-center">
       <p class="eyebrow reveal">Our Leadership</p>
-      <h2 class="display section-title reveal mt-4" style="--rd:80ms">The people behind <span class="text-grad">every pour.</span></h2>
+      <h2 class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="leadership.heading">The people behind</span> <span class="text-grad" data-cms="leadership.heading_accent">every pour.</span></h2>
+      <p class="reveal mt-5 text-lg leading-relaxed" style="--rd:160ms" data-cms="leadership.intro">Four directors who are on the plant floor, on the road and on site, not just in the boardroom. Open a profile to see what each of them looks after.</p>
     </div>
 
-    <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="reveal" style="--rd:0ms"><article class="pillar text-center">
-        <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-rise-orange/10 text-rise-orange"><svg class="ico h-8 w-8" style="stroke-width:1.8" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-user"/></svg></span>
-        <h3 class="display mt-5 text-[1.3rem] text-heading">Atul Nandkumar Mhatre</h3>
-        <p class="mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">Managing Director</p>
-        <div class="mt-4 space-y-2 text-sm">
+    <div class="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-4" data-cms-list="leadership.members" data-cms-as="directors">
+      <div class="reveal" style="--rd:0ms"><article class="pillar director flex h-full flex-col text-center">
+        <span class="avatar dir-photo mx-auto" data-initials="AM">AM</span>
+        <h3 class="display dir-name mt-5 text-[1.3rem] text-heading">Atul Nandkumar Mhatre</h3>
+        <p class="dir-role mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">Managing Director</p>
+        <p class="dir-tagline mt-2 text-sm font-medium text-heading">Strategy, finance and growth</p>
+        <p class="dir-bio mt-3 text-sm leading-relaxed">As Managing Director, Atul sets the direction of RISE INFRATECH: plant investments, key customer relationships and the standard every batch is held to. Under this leadership the company has grown from ready-mix concrete into a full range of construction materials supplied across Mumbai, Navi Mumbai and Raigad.</p>
+        <ul class="dir-skills mt-4 flex flex-wrap justify-center gap-1.5" aria-label="Areas of expertise"><li class="tag">Strategy</li><li class="tag">Finance</li><li class="tag">Key accounts</li><li class="tag">Plant investment</li></ul>
+        <div class="dir-links mt-4 space-y-2 text-sm">
           <a class="flex items-center justify-center gap-2 hover:text-rise-orange" href="mailto:admin@riseinfratech.in"><svg class="ico h-4 w-4 flex-none" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><span class="truncate">admin@riseinfratech.in</span></a>
         </div>
+        <button type="button" class="dir-more mx-auto" data-profile>View profile<svg class="ico h-3.5 w-3.5" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
       </article></div>
-
-      <div class="reveal" style="--rd:100ms"><article class="pillar text-center">
-        <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-rise-orange/10 text-rise-orange"><svg class="ico h-8 w-8" style="stroke-width:1.8" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-user"/></svg></span>
-        <h3 class="display mt-5 text-[1.3rem] text-heading">Mahendra L Thakur</h3>
-        <p class="mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">Director</p>
-        <div class="mt-4 space-y-2 text-sm">
+      <div class="reveal" style="--rd:100ms"><article class="pillar director flex h-full flex-col text-center">
+        <span class="avatar dir-photo mx-auto" data-initials="MT">MT</span>
+        <h3 class="display dir-name mt-5 text-[1.3rem] text-heading">Mahendra L Thakur</h3>
+        <p class="dir-role mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">Director</p>
+        <p class="dir-tagline mt-2 text-sm font-medium text-heading">Plant operations and production</p>
+        <p class="dir-bio mt-3 text-sm leading-relaxed">Mahendra oversees day-to-day operations at the Arivali and Nigade plants: batching, quality control, maintenance and dispatch. The brief is simple: every cubic metre leaves the plant on time, to the approved mix design, with its test reports in hand.</p>
+        <ul class="dir-skills mt-4 flex flex-wrap justify-center gap-1.5" aria-label="Areas of expertise"><li class="tag">Plant operations</li><li class="tag">Production</li><li class="tag">QA/QC</li><li class="tag">Maintenance</li></ul>
+        <div class="dir-links mt-4 space-y-2 text-sm">
           <a class="flex items-center justify-center gap-2 hover:text-rise-orange" href="tel:+919145673366"><svg class="ico h-4 w-4 flex-none" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>+91 9145673366</a>
           <a class="flex items-center justify-center gap-2 hover:text-rise-orange" href="mailto:mlthakur@riseinfratech.in"><svg class="ico h-4 w-4 flex-none" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><span class="truncate">mlthakur@riseinfratech.in</span></a>
         </div>
+        <button type="button" class="dir-more mx-auto" data-profile>View profile<svg class="ico h-3.5 w-3.5" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
       </article></div>
-
-      <div class="reveal" style="--rd:200ms"><article class="pillar text-center">
-        <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-rise-orange/10 text-rise-orange"><svg class="ico h-8 w-8" style="stroke-width:1.8" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-user"/></svg></span>
-        <h3 class="display mt-5 text-[1.3rem] text-heading">N.K. Nayak</h3>
-        <p class="mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">Business Head</p>
-        <div class="mt-4 space-y-2 text-sm">
+      <div class="reveal" style="--rd:200ms"><article class="pillar director flex h-full flex-col text-center">
+        <span class="avatar dir-photo mx-auto" data-initials="NN">NN</span>
+        <h3 class="display dir-name mt-5 text-[1.3rem] text-heading">N.K. Nayak</h3>
+        <p class="dir-role mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">Business Head</p>
+        <p class="dir-tagline mt-2 text-sm font-medium text-heading">Sales, projects and customer relationships</p>
+        <p class="dir-bio mt-3 text-sm leading-relaxed">N.K. Nayak heads the business side of RISE INFRATECH: enquiries, rate contracts, project supply planning and the customer relationships behind them. From the first site visit to the last pour, Nayak is the single point of contact for builders, contractors and consultants.</p>
+        <ul class="dir-skills mt-4 flex flex-wrap justify-center gap-1.5" aria-label="Areas of expertise"><li class="tag">Sales</li><li class="tag">Rate contracts</li><li class="tag">Project supply</li><li class="tag">Client relations</li></ul>
+        <div class="dir-links mt-4 space-y-2 text-sm">
           <a class="flex items-center justify-center gap-2 hover:text-rise-orange" href="tel:+919029003730"><svg class="ico h-4 w-4 flex-none" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>+91 9029003730</a>
           <a class="flex items-center justify-center gap-2 hover:text-rise-orange" href="mailto:nknayak@riseinfratech.in"><svg class="ico h-4 w-4 flex-none" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><span class="truncate">nknayak@riseinfratech.in</span></a>
         </div>
+        <button type="button" class="dir-more mx-auto" data-profile>View profile<svg class="ico h-3.5 w-3.5" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
       </article></div>
-
-      <div class="reveal" style="--rd:300ms"><article class="pillar text-center">
-        <span class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-rise-orange/10 text-rise-orange"><svg class="ico h-8 w-8" style="stroke-width:1.8" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-user"/></svg></span>
-        <h3 class="display mt-5 text-[1.3rem] text-heading">Neelesh Pandurag Mhatre</h3>
-        <p class="mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">Director</p>
-        <div class="mt-4 space-y-2 text-sm">
+      <div class="reveal" style="--rd:300ms"><article class="pillar director flex h-full flex-col text-center">
+        <span class="avatar dir-photo mx-auto" data-initials="NM">NM</span>
+        <h3 class="display dir-name mt-5 text-[1.3rem] text-heading">Neelesh Pandurag Mhatre</h3>
+        <p class="dir-role mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">Director</p>
+        <p class="dir-tagline mt-2 text-sm font-medium text-heading">Fleet, logistics and customer service</p>
+        <p class="dir-bio mt-3 text-sm leading-relaxed">Neelesh looks after logistics and customer service: the transit-mixer fleet, pumps and round-the-clock dispatch that keep large pours continuous, and the WhatsApp line customers reach first when they need concrete on site.</p>
+        <ul class="dir-skills mt-4 flex flex-wrap justify-center gap-1.5" aria-label="Areas of expertise"><li class="tag">Fleet</li><li class="tag">Logistics</li><li class="tag">Dispatch</li><li class="tag">Customer service</li></ul>
+        <div class="dir-links mt-4 space-y-2 text-sm">
           <a class="flex items-center justify-center gap-2 hover:text-rise-orange" href="tel:+919130904089"><svg class="ico h-4 w-4 flex-none" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>+91 9130904089</a>
           <a class="flex items-center justify-center gap-2 hover:text-rise-orange" href="mailto:npmhatre@riseinfratech.in"><svg class="ico h-4 w-4 flex-none" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><span class="truncate">npmhatre@riseinfratech.in</span></a>
         </div>
+        <button type="button" class="dir-more mx-auto" data-profile>View profile<svg class="ico h-3.5 w-3.5" style="stroke-width:2.6" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
       </article></div>
     </div>
   </div>
 </section>
+
+<!-- Director profile pop-up: filled from the card that was clicked -->
+<dialog id="profileDialog" class="profile-dialog" aria-labelledby="profileName">
+  <div class="profile-card">
+    <button type="button" class="icon-btn profile-close" id="profileClose" aria-label="Close profile"><svg class="ico h-5 w-5" style="stroke-width:2.2" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="profile-head">
+      <span class="avatar lg" id="profilePhoto"></span>
+      <div class="min-w-0 flex-1">
+        <p class="eyebrow">Leadership</p>
+        <h3 class="display mt-2 text-[clamp(1.6rem,4vw,2.2rem)] leading-none text-heading" id="profileName"></h3>
+        <p class="mt-2 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange" id="profileRole"></p>
+        <p class="mt-1.5 text-sm font-medium text-heading" id="profileTagline"></p>
+      </div>
+    </div>
+    <p class="mt-6 leading-relaxed" id="profileBio"></p>
+    <ul class="mt-5 flex flex-wrap gap-2" id="profileSkills" aria-label="Areas of expertise"></ul>
+    <div class="profile-links mt-6 flex flex-wrap gap-2.5" id="profileLinks"></div>
+  </div>
+</dialog>
 
 <!-- ============ 11. CONTACT (dark teal visiting-card panel) ============ -->
 <section id="contact" class="on-dark relative isolate overflow-clip py-20 text-white lg:py-28" aria-labelledby="contactTitle">
@@ -1196,8 +1282,8 @@
   <div class="mx-auto max-w-7xl px-5 sm:px-8">
     <div class="max-w-2xl">
       <p class="eyebrow reveal">Get in touch</p>
-      <h2 id="contactTitle" class="display section-title reveal mt-4" style="--rd:80ms">Let's pour the <span class="text-grad">foundation.</span></h2>
-      <p class="reveal mt-5 text-lg leading-relaxed text-white/70" style="--rd:160ms">Share your grade, volume and site location. We'll come back with a mix recommendation, a rate and a delivery plan.</p>
+      <h2 id="contactTitle" class="display section-title reveal mt-4" style="--rd:80ms"><span data-cms="contact.heading">Let's pour the</span> <span class="text-grad" data-cms="contact.heading_accent">foundation.</span></h2>
+      <p class="reveal mt-5 text-lg leading-relaxed text-white/70" style="--rd:160ms" data-cms="contact.intro">Share your grade, volume and site location. We'll come back with a mix recommendation, a rate and a delivery plan.</p>
     </div>
 
     <div class="mt-14 grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:gap-16">
@@ -1212,10 +1298,10 @@
                   <svg class="logo-svg" style="height:clamp(30px,8.5vw,44px)" viewBox="85 706 1762 520" aria-hidden="true"><use href="#rise-logo"/></svg>
                 </span>
                 <div class="mt-auto">
-                  <p class="display text-[clamp(1.25rem,4.6vw,1.9rem)] leading-none">Atul Nandkumar Mhatre</p>
-                  <p class="mt-1.5 font-display text-[clamp(.72rem,2.4vw,.9rem)] font-semibold uppercase tracking-[.26em] text-rise-gold">Managing Director</p>
+                  <p class="display text-[clamp(1.25rem,4.6vw,1.9rem)] leading-none" data-cms="contact.card_name">Atul Nandkumar Mhatre</p>
+                  <p class="mt-1.5 font-display text-[clamp(.72rem,2.4vw,.9rem)] font-semibold uppercase tracking-[.26em] text-rise-gold" data-cms="contact.card_role">Managing Director</p>
                   <div class="mt-[5%] space-y-[.45em]">
-                    <a class="vrow" href="mailto:admin@riseinfratech.in"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>admin@riseinfratech.in</a>
+                    <a class="vrow" href="mailto:admin@riseinfratech.in" data-cms-attr="href=mailto:{contact.email}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><span data-cms="contact.email">admin@riseinfratech.in</span></a>
                     <a class="vrow" href="https://www.riseinfratech.in" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg>www.riseinfratech.in</a>
                   </div>
                 </div>
@@ -1226,8 +1312,8 @@
               <div class="relative z-[2] flex h-full flex-col items-end justify-between p-[6%] text-right">
                 <p class="display text-[clamp(1.5rem,5.4vw,2.5rem)] text-rise-navy">Built to Rise.<br>Built to Last.</p>
                 <div class="max-w-[62%]">
-                  <p class="font-display text-[clamp(.66rem,2.1vw,.8rem)] font-bold uppercase tracking-[.22em] text-rise-navy/80">Registered Office</p>
-                  <p class="mt-1 text-[clamp(.68rem,2.3vw,.86rem)] font-medium leading-snug text-rise-navy">Office No. 311 &amp; 312, Hermes Atrium, Sector-11, CBD Belapur, Navi Mumbai - 400614</p>
+                  <p class="font-display text-[clamp(.66rem,2.1vw,.8rem)] font-bold uppercase tracking-[.22em] text-rise-navy/80" data-cms="contact.office_label">Registered Office</p>
+                  <p class="mt-1 text-[clamp(.68rem,2.3vw,.86rem)] font-medium leading-snug text-rise-navy" data-cms="contact.address">Office No. 311 &amp; 312, Hermes Atrium, Sector-11, CBD Belapur, Navi Mumbai - 400614</p>
                 </div>
               </div>
               <span class="absolute left-[5%] top-[9%] z-[2]"><svg class="logo-svg" style="height:clamp(28px,8vw,42px)" viewBox="85 706 1762 520" aria-hidden="true"><use href="#rise-logo"/></svg></span>
@@ -1244,8 +1330,8 @@
 
         <!-- Quick actions -->
         <div class="mt-8 grid grid-cols-2 gap-3">
-          <a class="qa reveal" style="--rd:0ms" href="mailto:admin@riseinfratech.in?subject=Enquiry%20-%20RISE%20INFRATECH"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><b>Email</b><small>Send requirements</small></a>
-          <a class="qa reveal" style="--rd:70ms" href="https://www.google.com/maps/search/?api=1&amp;query=Office+No.+311+%26+312%2C+Hermes+Atrium%2C+Sector-11%2C+CBD+Belapur%2C+Navi+Mumbai+400614" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map"/></svg><b>Directions</b><small>Open in Maps</small></a>
+          <a class="qa reveal" style="--rd:0ms" href="mailto:admin@riseinfratech.in?subject=Enquiry%20-%20RISE%20INFRATECH" data-cms-attr="href=mailto:{contact.email}?subject=Enquiry%20-%20RISE%20INFRATECH"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><b>Email</b><small>Send requirements</small></a>
+          <a class="qa reveal" style="--rd:70ms" href="https://www.google.com/maps/search/?api=1&amp;query=Office+No.+311+%26+312%2C+Hermes+Atrium%2C+Sector-11%2C+CBD+Belapur%2C+Navi+Mumbai+400614" target="_blank" rel="noopener" data-cms-attr="href=https://www.google.com/maps/search/?api=1&query={contact.address:url}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map"/></svg><b>Directions</b><small>Open in Maps</small></a>
         </div>
 
         <!-- Address tile with mini map -->
@@ -1258,21 +1344,21 @@
               <circle class="map-ring" cx="90" cy="80" r="13" stroke="#F04E23" stroke-width="2"/>
               <g class="map-pin"><path d="M90 80s-11-10-11-19a11 11 0 1 1 22 0c0 9-11 19-11 19z" fill="#F04E23"/><circle cx="90" cy="61" r="4" fill="#fff"/></g>
             </svg>
-            <span class="absolute bottom-2 left-2 rounded-sm bg-[#071E29]/80 px-2 py-1 font-display text-[.68rem] font-bold uppercase tracking-[.18em] text-rise-gold">CBD Belapur</span>
+            <span class="absolute bottom-2 left-2 rounded-sm bg-[#071E29]/80 px-2 py-1 font-display text-[.68rem] font-bold uppercase tracking-[.18em] text-rise-gold" data-cms="contact.map_label">CBD Belapur</span>
           </div>
           <div class="flex items-start gap-3 bg-white/[.04] p-5">
             <address class="not-italic">
-              <span class="font-display text-sm font-bold uppercase tracking-[.2em] text-rise-gold">Registered Office Address</span>
-              <span class="mt-1.5 block text-[.95rem] leading-relaxed text-white/85" id="addrText">Office No. 311 &amp; 312, Hermes Atrium, Sector-11, CBD Belapur, Navi Mumbai - 400614</span>
+              <span class="font-display text-sm font-bold uppercase tracking-[.2em] text-rise-gold"><span data-cms="contact.office_label">Registered Office</span> Address</span>
+              <span class="mt-1.5 block text-[.95rem] leading-relaxed text-white/85" id="addrText" data-cms="contact.address">Office No. 311 &amp; 312, Hermes Atrium, Sector-11, CBD Belapur, Navi Mumbai - 400614</span>
             </address>
-            <button type="button" class="copy-btn ml-auto" data-copy="Office No. 311 & 312, Hermes Atrium, Sector-11, CBD Belapur, Navi Mumbai - 400614" aria-label="Copy address"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-copy"/></svg></button>
+            <button type="button" class="copy-btn ml-auto" data-copy="Office No. 311 & 312, Hermes Atrium, Sector-11, CBD Belapur, Navi Mumbai - 400614" aria-label="Copy address" data-cms-attr="data-copy={contact.address}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-copy"/></svg></button>
           </div>
         </div>
         <div class="reveal mt-3 grid gap-3" style="--rd:160ms">
           <div class="flex items-center gap-3 rounded-md border border-white/10 bg-white/[.04] px-4 py-3">
             <svg class="ico h-5 w-5 flex-none text-rise-gold" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>
-            <a href="mailto:admin@riseinfratech.in" class="min-w-0 truncate text-[.95rem] font-medium hover:text-rise-gold">admin@riseinfratech.in</a>
-            <button type="button" class="copy-btn ml-auto" data-copy="admin@riseinfratech.in" aria-label="Copy email address"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-copy"/></svg></button>
+            <a href="mailto:admin@riseinfratech.in" class="min-w-0 truncate text-[.95rem] font-medium hover:text-rise-gold" data-cms="contact.email" data-cms-attr="href=mailto:{contact.email}">admin@riseinfratech.in</a>
+            <button type="button" class="copy-btn ml-auto" data-copy="admin@riseinfratech.in" aria-label="Copy email address" data-cms-attr="data-copy={contact.email}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-copy"/></svg></button>
           </div>
         </div>
       </div>
@@ -1283,7 +1369,7 @@
 
         <form id="enquiryForm" novalidate>
           <div class="flex items-start justify-between gap-4">
-            <div><h3 class="display text-3xl">Request a quote</h3><p class="mt-1.5 text-sm text-white/60">All fields are required. We reply within one working day.</p></div>
+            <div><h3 class="display text-3xl" data-cms="contact.form_heading">Request a quote</h3><p class="mt-1.5 text-sm text-white/60" data-cms="contact.form_note">All fields are required. We reply within one working day.</p></div>
             <p class="display flex-none text-right text-2xl text-rise-gold" aria-hidden="true"><span id="formPct">0</span>%<span class="block font-sans text-[.6rem] font-medium normal-case tracking-[.12em] text-white/50">complete</span></p>
           </div>
 
@@ -1312,13 +1398,16 @@
 
             <fieldset class="sm:col-span-2" data-field="service" aria-describedby="e-service">
               <legend class="mb-3 text-sm font-medium text-white/70">Service you need</legend>
-              <div class="flex flex-wrap gap-2.5">
+              <div class="flex flex-wrap gap-2.5" data-cms-list="services.items" data-cms-as="chips">
                 <label class="chip"><input type="radio" name="service" value="Ready-Mix Concrete" required><span>Ready-Mix Concrete</span></label>
-                <label class="chip"><input type="radio" name="service" value="Paver Blocks &amp; Lacquer"><span>Paver Blocks &amp; Lacquer</span></label>
-                <label class="chip"><input type="radio" name="service" value="Infrastructure &amp; Roads"><span>Infrastructure &amp; Roads</span></label>
-                <label class="chip"><input type="radio" name="service" value="Material Supply"><span>Material Supply</span></label>
-                <label class="chip"><input type="radio" name="service" value="Plant &amp; Machinery"><span>Plant &amp; Machinery</span></label>
-                <label class="chip"><input type="radio" name="service" value="Quality Assurance (QA/QC Lab)"><span>QA/QC Lab</span></label>
+                <label class="chip"><input type="radio" name="service" value="Dry Ready-Mix Bag Concrete"><span>Dry Ready-Mix Bag Concrete</span></label>
+                <label class="chip"><input type="radio" name="service" value="Wet Ready-Mix Bag Concrete"><span>Wet Ready-Mix Bag Concrete</span></label>
+                <label class="chip"><input type="radio" name="service" value="Ready-Mix Plaster"><span>Ready-Mix Plaster</span></label>
+                <label class="chip"><input type="radio" name="service" value="Tile Adhesive"><span>Tile Adhesive</span></label>
+                <label class="chip"><input type="radio" name="service" value="AAC Blocks"><span>AAC Blocks</span></label>
+                <label class="chip"><input type="radio" name="service" value="Aluminium &amp; uPVC Windows"><span>Aluminium &amp; uPVC Windows</span></label>
+                <label class="chip"><input type="radio" name="service" value="Doors &amp; Windows (FRP / Aluminium)"><span>Doors &amp; Windows (FRP / Aluminium)</span></label>
+                <label class="chip"><input type="radio" name="service" value="Paver Blocks"><span>Paver Blocks</span></label>
                 <label class="chip"><input type="radio" name="service" value="Other"><span>Other</span></label>
               </div>
               <p class="f-err" id="e-service" role="alert"></p>
@@ -1366,14 +1455,14 @@
         <svg class="logo-svg" style="height:56px" viewBox="85 706 1762 520" aria-hidden="true"><use href="#rise-logo"/></svg>
       </a>
       <p class="mt-5 font-display text-xl font-bold uppercase tracking-[.14em] text-grad">Built to Rise. Built to Last.</p>
-      <p class="mt-3 max-w-xs text-sm leading-relaxed text-white/60">Ready-Mix Concrete, paver blocks, construction materials and infrastructure works from Panvel, Raigad.</p>
+      <p class="mt-3 max-w-xs text-sm leading-relaxed text-white/60" data-cms="home.footer_blurb">Ready-mix concrete, AAC blocks, paver blocks, doors, windows and construction materials, manufactured in Navi Mumbai.</p>
       <!-- Social links are placeholders: replace "#" with real profile URLs -->
       <ul class="mt-6 flex gap-2.5">
-        <li><a class="social" href="#" aria-label="RISE Infratech on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-in"/></svg></a></li>
-        <li><a class="social" href="#" aria-label="RISE Infratech on Instagram"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig"/></svg></a></li>
-        <li><a class="social" href="#" aria-label="RISE Infratech on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-fb"/></svg></a></li>
-        <li><a class="social" href="#" aria-label="RISE Infratech on YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-yt"/></svg></a></li>
-        <li><a class="social" href="https://wa.me/919130904089" target="_blank" rel="noopener" aria-label="RISE Infratech on WhatsApp"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg></a></li>
+        <li data-cms-hide-empty="contact.linkedin"><a class="social" href="#" aria-label="RISE Infratech on LinkedIn" target="_blank" rel="noopener" data-cms-attr="href={contact.linkedin}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-in"/></svg></a></li>
+        <li data-cms-hide-empty="contact.instagram"><a class="social" href="#" aria-label="RISE Infratech on Instagram" target="_blank" rel="noopener" data-cms-attr="href={contact.instagram}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig"/></svg></a></li>
+        <li data-cms-hide-empty="contact.facebook"><a class="social" href="#" aria-label="RISE Infratech on Facebook" target="_blank" rel="noopener" data-cms-attr="href={contact.facebook}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-fb"/></svg></a></li>
+        <li data-cms-hide-empty="contact.youtube"><a class="social" href="#" aria-label="RISE Infratech on YouTube" target="_blank" rel="noopener" data-cms-attr="href={contact.youtube}"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#i-yt"/></svg></a></li>
+        <li><a class="social" href="https://wa.me/919130904089" target="_blank" rel="noopener" aria-label="RISE Infratech on WhatsApp" data-cms-attr="href=https://wa.me/{contact.phone:digits}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg></a></li>
       </ul>
     </div>
 
@@ -1383,8 +1472,8 @@
         <li><a class="foot-link" href="#home">Home</a></li>
         <li><a class="foot-link" href="#about">About</a></li>
         <li><a class="foot-link" href="#services">Services</a></li>
-        <li><a class="foot-link" href="#projects">Projects</a></li>
         <li><a class="foot-link" href="#plant">Plant &amp; Capabilities</a></li>
+        <li><a class="foot-link" href="#projects">Projects</a></li>
         <li><a class="foot-link" href="#sustainability">Sustainability</a></li>
         <li><a class="foot-link" href="#careers">Careers</a></li>
         <li><a class="foot-link" href="#leadership">Leadership</a></li>
@@ -1394,22 +1483,25 @@
 
     <nav aria-label="Footer services">
       <h2 class="font-display text-sm font-bold uppercase tracking-[.24em] text-rise-gold">Services</h2>
-      <ul class="mt-5 space-y-2.5 text-[.95rem]">
+      <ul class="mt-5 space-y-2.5 text-[.95rem]" data-cms-list="services.items" data-cms-as="links">
         <li><a class="foot-link" href="#services">Ready-Mix Concrete</a></li>
-        <li><a class="foot-link" href="#services">Paver Blocks &amp; Lacquer</a></li>
-        <li><a class="foot-link" href="#services">Infrastructure &amp; Roads</a></li>
-        <li><a class="foot-link" href="#services">Material Supply</a></li>
-        <li><a class="foot-link" href="#services">Plant &amp; Machinery</a></li>
-        <li><a class="foot-link" href="#services">QA/QC Lab</a></li>
+        <li><a class="foot-link" href="#services">Dry Ready-Mix Bag Concrete</a></li>
+        <li><a class="foot-link" href="#services">Wet Ready-Mix Bag Concrete</a></li>
+        <li><a class="foot-link" href="#services">Ready-Mix Plaster</a></li>
+        <li><a class="foot-link" href="#services">Tile Adhesive</a></li>
+        <li><a class="foot-link" href="#services">AAC Blocks</a></li>
+        <li><a class="foot-link" href="#services">Aluminium &amp; uPVC Windows</a></li>
+        <li><a class="foot-link" href="#services">Doors &amp; Windows (FRP / Aluminium)</a></li>
+        <li><a class="foot-link" href="#services">Paver Blocks</a></li>
       </ul>
     </nav>
 
     <div>
       <h2 class="font-display text-sm font-bold uppercase tracking-[.24em] text-rise-gold">Reach Us</h2>
       <ul class="mt-5 space-y-3.5 text-[.95rem] text-white/70">
-        <li class="flex gap-3"><svg class="ico mt-0.5 h-5 w-5 flex-none text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map"/></svg><span>Office No. 311 &amp; 312, Hermes Atrium, Sector-11, CBD Belapur, Navi Mumbai - 400614</span></li>
-        <li class="flex gap-3"><svg class="ico mt-0.5 h-5 w-5 flex-none text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg><a class="hover:text-white" href="tel:+919130904089">+91 9130904089</a></li>
-        <li class="flex gap-3"><svg class="ico mt-0.5 h-5 w-5 flex-none text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><a class="break-all hover:text-white" href="mailto:admin@riseinfratech.in">admin@riseinfratech.in</a></li>
+        <li class="flex gap-3"><svg class="ico mt-0.5 h-5 w-5 flex-none text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-map"/></svg><span data-cms="contact.address">Office No. 311 &amp; 312, Hermes Atrium, Sector-11, CBD Belapur, Navi Mumbai - 400614</span></li>
+        <li class="flex gap-3"><svg class="ico mt-0.5 h-5 w-5 flex-none text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg><a class="hover:text-white" href="tel:+919130904089" data-cms="contact.phone" data-cms-attr="href=tel:{contact.phone:tel}">+91 9130904089</a></li>
+        <li class="flex gap-3"><svg class="ico mt-0.5 h-5 w-5 flex-none text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg><a class="break-all hover:text-white" href="mailto:admin@riseinfratech.in" data-cms="contact.email" data-cms-attr="href=mailto:{contact.email}">admin@riseinfratech.in</a></li>
         <li class="flex gap-3"><svg class="ico mt-0.5 h-5 w-5 flex-none text-rise-orange" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg><a class="hover:text-white" href="https://www.riseinfratech.in" target="_blank" rel="noopener">www.riseinfratech.in</a></li>
       </ul>
     </div>
@@ -1435,295 +1527,424 @@
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const root = document.documentElement;
 
-  /* ----- Theme toggle (defaults to prefers-color-scheme) ----- */
-  $('#themeToggle').addEventListener('click', () => {
-    const current = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    const next = current === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    try { localStorage.setItem('rise-theme', next); } catch (e) {}
-  });
-
-  /* ----- Sticky nav: shrink + blur, scroll progress, hero scroll parallax ----- */
-  const nav = $('#nav'), bar = $('#scrollbar'), heroGeo = $('#heroGeo'), heroContent = $('#heroContent');
-  let ticking = false;
-  const onScroll = () => {
-    const y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
-    nav.classList.toggle('scrolled', y > 24);
-    bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
-    if (!reduceMotion && y < innerHeight) {
-      const p = y / innerHeight;
-      heroGeo.style.setProperty('--sy', p.toFixed(3));
-      heroContent.style.transform = `translate3d(0, ${p * 70}px, 0)`;
-      heroContent.style.opacity = Math.max(0, 1 - p * 1.35);
-    }
-    ticking = false;
+  /* ----- Content published from RISE ERP (Website > Content) -----
+     content.json overrides the text baked into this page; every list is rebuilt with the same markup as the default. */
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+  const pick = (obj, path) => path.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
+  const isNum = v => /^\d+(\.\d+)?$/.test(String(v ?? '').trim());
+  const figure = it => isNum(it.value) ? `<span data-count="${String(it.value).trim()}">0</span>` : esc(it.value);
+  const ico = (name, fallback, cls = 'ico', style = '') => {
+    const id = /^[a-z-]+$/.test(name || '') && document.getElementById('i-' + name) ? name : fallback;
+    return `<svg class="${cls}"${style ? ` style="${style}"` : ''} viewBox="0 0 24 24" aria-hidden="true"><use href="#i-${id}"/></svg>`;
   };
-  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
-  onScroll();
-
-  /* ----- Hero mouse parallax (eased) ----- */
-  if (!reduceMotion && matchMedia('(pointer: fine)').matches) {
-    const hero = $('#home'); let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
-    const step = () => {
-      cx += (tx - cx) * .07; cy += (ty - cy) * .07;
-      heroGeo.style.setProperty('--mx', cx.toFixed(4)); heroGeo.style.setProperty('--my', cy.toFixed(4));
-      raf = (Math.abs(tx - cx) + Math.abs(ty - cy) > .001) ? requestAnimationFrame(step) : null;
-    };
-    hero.addEventListener('pointermove', e => {
-      const r = hero.getBoundingClientRect();
-      tx = (e.clientX - r.left) / r.width * 2 - 1; ty = (e.clientY - r.top) / r.height * 2 - 1;
-      if (!raf) raf = requestAnimationFrame(step);
-    });
-    hero.addEventListener('pointerleave', () => { tx = ty = 0; if (!raf) raf = requestAnimationFrame(step); });
-  }
-
-  /* ----- Mobile menu ----- */
-  const burger = $('#burger'), menu = $('#mobileMenu');
-  const setMenu = open => {
-    menu.classList.toggle('open', open); menu.toggleAttribute('inert', !open);
-    burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    document.body.style.overflow = open ? 'hidden' : '';
+  const tagList = t => (Array.isArray(t) ? t : String(t ?? '').split(/[,|]/)).map(x => String(x).trim()).filter(Boolean);
+  const digits = v => String(v ?? '').replace(/\D/g, '');
+  const safeUrl = u => (/^(https?:\/\/|\/|\.?\/?[\w-]+\/)/i.test(String(u ?? '').trim()) ? String(u).trim() : '');
+  const initials = name => String(name ?? '').trim().split(/\s+/).filter(Boolean).map((w, i, a) => (i === 0 || i === a.length - 1 ? w[0] : '')).join('').toUpperCase().slice(0, 2);
+  const avatar = (it, cls = 'avatar') => `<span class="${cls} dir-photo" data-initials="${esc(initials(it.name))}">${safeUrl(it.photo) ? `<img src="${esc(safeUrl(it.photo))}" alt="${esc(it.name)}" loading="lazy" decoding="async" onerror="this.remove()">` : esc(initials(it.name))}</span>`;
+  const contactLink = (href, icon, text, external = false) => `<a class="flex items-center justify-center gap-2 hover:text-rise-orange" href="${esc(href)}"${external ? ' target="_blank" rel="noopener"' : ''}>${ico(icon, 'mail', 'ico h-4 w-4 flex-none')}<span class="truncate">${esc(text)}</span></a>`;
+  /* the six project illustrations and the four pillar icons, so a published row can pick one */
+  const ARTS = {
+    tower: '<path class="ln" d="M60 300V130h72v170M152 300V74h84v226M256 300V156h74v144"/><path class="ln dim" d="M76 160h40M76 190h40M76 220h40M76 250h40M170 104h48M170 134h48M170 164h48M170 194h48M170 224h48M272 186h42M272 216h42M272 246h42"/><path class="hl" d="M194 74V32M158 32h134M292 32v34M194 32l-24 20"/>',
+    road: '<path class="ln dim" d="M0 96h400M0 96l70-44 58 44M236 96l74-52 90 52"/><path d="M120 300 186 96h28l66 204z" fill="rgba(255,255,255,.07)"/><path class="ln" d="M120 300 186 96M280 300 214 96"/><path class="hl" d="M200 112v22M200 156v32M200 214v44" />',
+    pavers: '<defs><pattern id="pv-${i}" width="56" height="56" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M2 2h52v24H2zM2 30h24v24H2zM30 30h24v24H30z" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/></pattern></defs><rect x="0" y="40" width="400" height="260" fill="url(#pv-${i})"/><path class="hl" d="M172 138l28-28 28 28-28 28z" fill="rgba(251,176,59,.25)"/>',
+    bridge: '<path class="ln" d="M0 150h400M0 166h400M50 166v134M170 166v134M290 166v134M350 166"/><path class="hl" d="M50 166q60 84 120 0M170 166q60 84 120 0M290 166q60 84 120 0"/><path class="ln dim" d="M20 268h70M130 284h90M250 270h80M0 150V128M40 150v-22M80 150v-22M120 150v-22M160 150v-22M200 150v-22M240 150v-22M280 150v-22M320 150v-22M360 150v-22M400 150v-22M0 128h400"/>',
+    township: '<path class="ln" d="M30 262v-76l44-38 44 38v76M142 262V162l50-44 50 44v100M266 262v-76l44-38 44 38v76"/><path class="ln dim" d="M60 262v-36h28v36M176 262v-44h32v44M296 262v-36h28v36M56 200h12M168 176h14M202 176h14M324 200h12"/><path class="hl" d="M0 262h400M0 288h40M70 288h50M150 288h50M230 288h50M310 288h50"/>',
+    warehouse: '<path class="ln" d="M36 300V152l164-64 164 64v148M36 152h328"/><path class="ln dim" d="M76 152v148M324 152v148M150 300v-96h100v96M150 224h100M150 244h100M150 264h100M150 284h100"/><path class="hl" d="M200 88v-30M170 58h60"/>'
   };
-  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
-  $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
-  addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); burger.focus(); } });
-  matchMedia('(min-width: 1280px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
-
-  /* ----- Active nav link ----- */
-  const links = $$('.nav-link');
-  const spy = new IntersectionObserver(entries => entries.forEach(en => {
-    // sections without a nav entry (process, why) keep the previous highlight
-    if (en.isIntersecting && links.some(l => l.getAttribute('href') === '#' + en.target.id))
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
-  }), { rootMargin: '-45% 0px -50% 0px' });
-  $$('main section[id]').forEach(s => spy.observe(s));
-
-  /* ----- Scroll reveal ----- */
-  const revealIO = new IntersectionObserver((entries, io) => entries.forEach(en => {
-    if (!en.isIntersecting) return;
-    const el = en.target; el.classList.add('in'); io.unobserve(el);
-    // drop the stagger delay afterwards so hover transitions stay snappy
-    setTimeout(() => el.style.setProperty('--rd', '0ms'), 1400);
-  }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
-  $$('.reveal').forEach(el => revealIO.observe(el));
-
-  /* ----- Animated counters ----- */
-  const fmt = new Intl.NumberFormat('en-IN');
-  const runCounter = el => {
-    const end = parseFloat(el.dataset.count), dec = +(el.dataset.decimals || 0), dur = 2200, t0 = performance.now();
-    const show = v => el.textContent = dec ? v.toFixed(dec) : fmt.format(Math.round(v));
-    if (reduceMotion) return show(end);
-    const tick = now => {
-      const p = Math.min(1, (now - t0) / dur), eased = 1 - Math.pow(2, -10 * p);
-      show(p === 1 ? end : end * eased);
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+  const PILLAR_ICONS = [
+    '<svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="a-pulse" d="M32 6l20 7v15c0 12-8 22-20 26-12-4-20-14-20-26V13l20-7z"/><path class="a-draw" pathLength="1" d="M22 31l7 7 13-14" stroke="#F58220" stroke-width="4.5"/></svg>',
+    '<svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="32" r="25"/><path d="M32 11v4M32 49v4M11 32h4M49 32h4" opacity=".5"/><path class="a-hand-h" d="M32 32h11" stroke="#F58220" stroke-width="4"/><path class="a-hand-m" d="M32 32V15" stroke="#F58220" stroke-width="3.2"/><circle cx="32" cy="32" r="2.500" fill="currentColor"/></svg>',
+    '<svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="butt" aria-hidden="true"><g class="a-spin"><circle cx="25" cy="27" r="15" stroke-width="6" stroke-dasharray="5.500 4.970"/><circle cx="25" cy="27" r="11" stroke-width="2.600"/><circle cx="25" cy="27" r="3.500" stroke-width="2.600"/></g><g class="a-spin rev" stroke="#F58220"><circle cx="47" cy="46" r="10" stroke-width="5" stroke-dasharray="4.500 4.476"/><circle cx="47" cy="46" r="6.500" stroke-width="2.600"/></g></svg>',
+    '<svg class="pillar-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 56h48"/><rect class="a-bar" style="--i:0" x="13" y="36" width="9" height="20" fill="currentColor" fill-opacity=".15"/><rect class="a-bar" style="--i:1" x="28" y="26" width="9" height="30" fill="currentColor" fill-opacity=".15"/><rect class="a-bar" style="--i:2" x="43" y="16" width="9" height="40" fill="currentColor" fill-opacity=".15"/><path class="a-draw" pathLength="1" d="M10 28 26 14l10 6L54 6M54 6h-9M54 6v9" stroke="#F58220" stroke-width="3.4"/></svg>'
+  ];
+  const facts = t => String(t ?? '').split(/\r?\n/).map(l => l.trim()).filter(Boolean).map(l => { const m = l.match(/^([^:]{1,24}):\s*(.+)$/); return m ? `<li><b>${esc(m[1])}</b>${esc(m[2])}</li>` : `<li>${esc(l)}</li>`; }).join('');
+  let live = {};   // the published content, for scripts that build links at run time (enquiry form)
+  const renderers = {
+    stats: (items, el) => {
+      el.className = el.className.replace(/md:grid-cols-\d/, 'md:grid-cols-' + Math.min(items.length, 4));
+      return items.map(it => `<div class="stat px-4 py-5 sm:px-7 sm:py-6"><dd class="display text-4xl sm:text-5xl">${figure(it)}${it.suffix ? `<span class="text-rise-orange">${esc(it.suffix)}</span>` : ''}</dd><dt class="mt-1.5 text-[.7rem] font-medium uppercase tracking-[.16em] text-white/65 sm:text-xs">${esc(it.label)}</dt></div>`).join('');
+    },
+    marquee: items => items.map(it => `<span>${esc(it.text)}</span>`).join('').repeat(2),
+    checks: items => items.map(it => `<li class="flex items-start gap-3"><span class="grid h-6 w-6 flex-none place-items-center rounded-sm bg-grad text-white">${ico('check', 'check', 'ico h-3.5 w-3.5', 'stroke-width:3')}</span><span>${esc(it.text)}</span></li>`).join(''),
+    ticks: items => items.map(it => `<li class="flex items-center gap-2.5">${ico('check', 'check', 'ico h-5 w-5 flex-none text-rise-orange', 'stroke-width:2.6')}${esc(it.text)}</li>`).join(''),
+    cards: items => items.map((it, i) => `<div class="reveal" style="--rd:${(i % 3) * 90}ms"><article class="svc"><div class="svc-inner">
+        <span class="display svc-no" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+        <div class="svc-icon">${ico(it.icon, 'box')}</div>
+        <h3 class="display mt-6 text-[1.7rem] text-heading">${esc(it.title)}</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">${esc(it.description)}</p>
+        <p class="mt-5 flex flex-wrap gap-2">${tagList(it.tags).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</p>
+        <a href="#contact" class="svc-link" data-service="${esc(it.title)}">Enquire<span class="sr-only"> about ${esc(String(it.title ?? '').replace(/&/g, 'and'))}</span>${ico('arrow', 'arrow', 'ico', 'stroke-width:2.4')}</a>
+      </div></article></div>`).join(''),
+    chips: items => [...items.map(it => it.title), 'Other'].map((t, i) => `<label class="chip"><input type="radio" name="service" value="${esc(t)}"${i ? '' : ' required'}><span>${esc(t)}</span></label>`).join(''),
+    links: items => items.map(it => `<li><a class="foot-link" href="#services">${esc(it.title)}</a></li>`).join(''),
+    caps: items => items.map((it, i) => `<li class="reveal" style="--rd:${i * 70}ms"><span class="cap-badge">${ico(it.icon, 'check')}${esc(it.text)}</span></li>`).join(''),
+    steps: items => items.map((it, i) => `<li class="step"><span class="step-conn" aria-hidden="true"><i></i></span>
+          <div class="step-icon">${ico(it.icon, 'box')}</div>
+          <div><span class="step-no">STEP ${String(i + 1).padStart(2, '0')}</span><h4 class="display mt-1 text-2xl text-heading">${esc(it.title)}</h4><p class="mt-2 text-sm leading-relaxed text-white/65">${esc(it.description)}</p></div></li>`).join(''),
+    roles: items => items.map((it, i) => `<li class="role-chip" style="--i:${i}">${esc(it.text)}</li>`).join(''),
+    pillars: items => items.slice(0, 4).map((it, i) => `<div class="reveal" style="--rd:${i * 100}ms"><article class="pillar">${PILLAR_ICONS[i % PILLAR_ICONS.length]}
+        <h3 class="display mt-6 text-[1.6rem] text-heading">${esc(it.title)}</h3>
+        <p class="mt-3 text-[.95rem] leading-relaxed">${esc(it.description)}</p></article></div>`).join(''),
+    projects: items => items.map((it, i) => `<li class="proj" tabindex="0"><svg class="proj-art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">${(ARTS[it.art] || ARTS.tower).replaceAll('${i}', i)}</svg>
+        <span class="proj-chip">${esc(it.chip)}</span>
+        <div class="proj-base"><h3 class="display text-[1.65rem]">${esc(it.title)}</h3><p class="mt-1 text-sm text-white/70">${esc(it.location)}</p></div>
+        <div class="proj-over"><h3 class="display text-[1.65rem]" style="--k:0">${esc(it.title)}</h3><ul class="mt-3" style="--k:1">${facts(it.facts)}</ul></div></li>`).join(''),
+    directors: (items, el) => {
+      el.className = el.className.replace(/lg:grid-cols-\d/, 'lg:grid-cols-' + Math.min(Math.max(items.length, 2), 4));
+      return items.map((it, i) => {
+        const links = [];
+        if (it.phone) links.push(contactLink('tel:+' + digits(it.phone), 'phone', it.phone));
+        if (it.email) links.push(contactLink('mailto:' + it.email, 'mail', it.email));
+        if (safeUrl(it.linkedin)) links.push(contactLink(safeUrl(it.linkedin), 'in', 'LinkedIn', true));
+        return `<div class="reveal" style="--rd:${i * 100}ms"><article class="pillar director flex h-full flex-col text-center">${avatar(it, 'avatar mx-auto')}
+        <h3 class="display dir-name mt-5 text-[1.3rem] text-heading">${esc(it.name)}</h3>
+        <p class="dir-role mt-1 font-display text-xs font-bold uppercase tracking-[.22em] text-rise-orange">${esc(it.role)}</p>
+        ${it.tagline ? `<p class="dir-tagline mt-2 text-sm font-medium text-heading">${esc(it.tagline)}</p>` : ''}
+        ${it.bio ? `<p class="dir-bio mt-3 text-sm leading-relaxed">${esc(it.bio)}</p>` : ''}
+        <ul class="dir-skills mt-4 flex flex-wrap justify-center gap-1.5" aria-label="Areas of expertise">${tagList(it.expertise).map(t => `<li class="tag">${esc(t)}</li>`).join('')}</ul>
+        <div class="dir-links mt-4 space-y-2 text-sm">${links.join('')}</div>
+        <button type="button" class="dir-more mx-auto" data-profile>View profile${ico('arrow', 'arrow', 'ico h-3.5 w-3.5', 'stroke-width:2.6')}</button></article></div>`;
+      }).join('');
+    },
+    green: items => items.map((it, i) => `<div class="green-stat reveal" style="--rd:${i * 100}ms">
+          ${ico(it.icon, 'leaf', 'ico h-7 w-7 text-rise-orange' + (it.icon === 'leaf' ? ' leaf-sway' : ''))}
+          <p class="display mt-3 ${String(it.value ?? '').length > 6 ? 'text-[1.7rem] leading-[1.15]' : 'text-4xl'} text-heading">${it.prefix ? `<span class="text-base font-semibold normal-case tracking-normal">${esc(it.prefix)} </span>` : ''}${figure(it)}${esc(it.suffix)}</p>
+          <p class="mt-1 text-sm leading-snug">${esc(it.label)}</p>
+        </div>`).join('')
   };
-  const countIO = new IntersectionObserver((entries, io) => entries.forEach(en => {
-    if (en.isIntersecting) { runCounter(en.target); io.unobserve(en.target); }
-  }), { threshold: .6 });
-  $$('[data-count]').forEach(el => countIO.observe(el));
-
-  /* ----- Typed / rotating headline word ----- */
-  const typed = $('#typed');
-  const words = ['ROADS', 'PLANTS', 'STRUCTURES', 'THE FUTURE'];
-  if (reduceMotion) {
-    let i = 0; setInterval(() => typed.textContent = words[i = (i + 1) % words.length], 3000);
-  } else {
-    let w = 0, c = words[0].length, deleting = true;
-    const type = () => {
-      const word = words[w]; let delay;
-      if (deleting) { c--; delay = 45; if (c === 0) { deleting = false; w = (w + 1) % words.length; delay = 280; } }
-      else { c++; delay = 95; if (c === words[w].length) { deleting = true; delay = 1900; } }
-      typed.textContent = words[w].slice(0, c);
-      setTimeout(type, delay);
-    };
-    setTimeout(type, 2200);
-  }
-
-  /* ----- Service cards: cursor-tracking spotlight ----- */
-  $$('.svc').forEach(card => card.addEventListener('pointermove', e => {
-    const r = card.getBoundingClientRect(), inner = card.firstElementChild;
-    inner.style.setProperty('--mx', (e.clientX - r.left) + 'px'); inner.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  }));
-
-  /* ----- RMC process strip: steps light up in sequence, then loop ----- */
-  const procList = $('#processSteps');
-  if (procList) {
-    const steps = $$('.step', procList); let active = -1, timer = null;
-    const paint = () => steps.forEach((s, i) => {
-      s.classList.toggle('lit', i <= active); s.classList.toggle('done', i < active); s.classList.toggle('active', i === active);
+  const applyContent = data => {
+    const content = data && data.content;
+    if (!content || typeof content !== 'object') return;
+    live = content;
+    // attribute templates: data-cms-attr="href=mailto:{contact.email}|data-copy={contact.address}"; filters :digits :tel :url
+    const fill = tpl => tpl.replace(/\{([a-z_.]+)(?::(digits|tel|url))?\}/g, (_, path, f) => {
+      const v = pick(content, path); if (typeof v !== 'string') return '\0';
+      return f === 'digits' ? digits(v) : f === 'tel' ? '+' + digits(v) : f === 'url' ? encodeURIComponent(v) : v;
     });
-    const advance = () => {
-      active = active >= steps.length - 1 ? -1 : active + 1; paint();
-      timer = setTimeout(advance, active === steps.length - 1 ? 2800 : active === -1 ? 700 : 1500);
-    };
-    if (reduceMotion) { active = steps.length - 1; paint(); steps.forEach(s => s.classList.remove('active')); }
-    else {
-      new IntersectionObserver(([en]) => {
-        if (en.isIntersecting && !timer) advance();
-        else if (!en.isIntersecting && timer) { clearTimeout(timer); timer = null; }
-      }, { threshold: .25 }).observe(procList);
-    }
-  }
-
-  /* ----- Projects carousel: mouse drag + momentum, auto-scroll (ping-pong), arrows, progress ----- */
-  const car = $('#carousel');
-  if (car) {
-    const carBar = $('#carBar');
-    let pos = 0, dir = 1, visible = false, hover = false, dragging = false, holdUntil = 0;
-    let startX = 0, startLeft = 0, lastX = 0, lastT = 0, vel = 0, glide = null;
-    const maxScroll = () => car.scrollWidth - car.clientWidth;
-    const hold = ms => holdUntil = performance.now() + ms;
-    const updateBar = () => {
-      const m = maxScroll(), view = m > 0 ? car.clientWidth / car.scrollWidth : 1;
-      carBar.style.transform = `translateX(${(m > 0 ? car.scrollLeft / m : 0) * (1 - view) * 100}%) scaleX(${view})`;
-    };
-    car.addEventListener('scroll', updateBar, { passive: true });
-    addEventListener('resize', updateBar); updateBar();
-
-    const auto = () => {
-      if (visible && !hover && !dragging && !glide && performance.now() > holdUntil && !car.contains(document.activeElement)) {
-        const m = maxScroll();
-        if (Math.abs(pos - car.scrollLeft) > 2) pos = car.scrollLeft;   // re-sync after user scrolling
-        pos += dir * .6;
-        if (pos >= m) { pos = m; dir = -1; hold(1200); } else if (pos <= 0) { pos = 0; dir = 1; hold(1200); }
-        car.scrollLeft = pos;
-      }
-      requestAnimationFrame(auto);
-    };
-    if (!reduceMotion) requestAnimationFrame(auto);
-    new IntersectionObserver(([en]) => visible = en.isIntersecting, { threshold: .2 }).observe(car);
-    car.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hover = true; });
-    car.addEventListener('pointerleave', () => hover = false);
-    car.addEventListener('touchstart', () => hold(5000), { passive: true });
-    car.addEventListener('wheel', () => hold(3000), { passive: true });
-
-    car.addEventListener('pointerdown', e => {
-      if (e.pointerType !== 'mouse' || e.button !== 0) return;   // touch uses native scrolling
-      dragging = true; startX = lastX = e.clientX; startLeft = car.scrollLeft; lastT = performance.now(); vel = 0;
-      if (glide) { cancelAnimationFrame(glide); glide = null; }
-      car.setPointerCapture(e.pointerId);
-    });
-    car.addEventListener('pointermove', e => {
-      if (!dragging) return;
-      if (Math.abs(e.clientX - startX) > 4) car.classList.add('dragging');
-      car.scrollLeft = startLeft - (e.clientX - startX);
-      const now = performance.now(), dt = now - lastT;
-      if (dt > 0) { vel = .8 * ((lastX - e.clientX) / dt * 16) + .2 * vel; lastX = e.clientX; lastT = now; }
-    });
-    const endDrag = () => {
-      if (!dragging) return;
-      dragging = false; car.classList.remove('dragging'); hold(2500);
-      const step = () => {
-        vel *= .94; car.scrollLeft += vel;
-        glide = Math.abs(vel) > .4 ? requestAnimationFrame(step) : null;
-      };
-      if (Math.abs(vel) > 1 && !reduceMotion) glide = requestAnimationFrame(step);
-    };
-    car.addEventListener('pointerup', endDrag); car.addEventListener('pointercancel', endDrag);
-
-    const nudge = d => { hold(4000); const card = car.firstElementChild; car.scrollBy({ left: d * (card.offsetWidth + 26), behavior: reduceMotion ? 'auto' : 'smooth' }); };
-    $('#carPrev').addEventListener('click', () => nudge(-1));
-    $('#carNext').addEventListener('click', () => nudge(1));
-  }
-
-  /* ----- Contact: 3D visiting card (tilt, glare, flip) ----- */
-  const vcard = $('#vcard'), flipBtn = $('#flipBtn');
-  if (vcard) {
-    const setFlip = on => {
-      vcard.classList.toggle('flipped', on); flipBtn.setAttribute('aria-pressed', on);
-      $('#vfront').toggleAttribute('inert', on); $('#vback').toggleAttribute('inert', !on);
-    };
-    flipBtn.addEventListener('click', () => setFlip(!vcard.classList.contains('flipped')));
-    vcard.addEventListener('click', e => { if (!e.target.closest('a')) setFlip(!vcard.classList.contains('flipped')); });
-    if (!reduceMotion && matchMedia('(pointer: fine)').matches) {
-      vcard.addEventListener('pointermove', e => {
-        const r = vcard.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-        vcard.classList.add('tilting');
-        vcard.style.setProperty('--ry', ((x - .5) * 20).toFixed(2) + 'deg'); vcard.style.setProperty('--rx', ((.5 - y) * 14).toFixed(2) + 'deg');
-        const flipped = vcard.classList.contains('flipped');
-        vcard.style.setProperty('--gx', ((flipped ? 1 - x : x) * 100).toFixed(1) + '%'); vcard.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
-      });
-      vcard.addEventListener('pointerleave', () => { vcard.classList.remove('tilting'); vcard.style.setProperty('--rx', '0deg'); vcard.style.setProperty('--ry', '0deg'); });
-    }
-  }
-
-  /* ----- Copy-to-clipboard buttons ----- */
-  $$('[data-copy]').forEach(btn => btn.addEventListener('click', async () => {
-    const text = btn.dataset.copy;
-    try { await navigator.clipboard.writeText(text); }
-    catch (e) { const ta = Object.assign(document.createElement('textarea'), { value: text }); document.body.append(ta); ta.select(); try { document.execCommand('copy'); } catch (_) {} ta.remove(); }
-    btn.classList.add('copied'); setTimeout(() => btn.classList.remove('copied'), 1600);
-  }));
-
-  /* ----- Enquiry form: client-side validation only ----- */
-  const form = $('#enquiryForm');
-  if (form) {
-    const fields = $$('[data-field]', form), success = $('#formSuccess'), submitBtn = $('#submitBtn');
-    const val = name => name === 'service' ? (form.elements.service.value || '') : $(`#f-${name}`).value;
-    const rules = {
-      name: v => v.trim().length >= 2 && /^[\p{L} .'-]+$/u.test(v.trim()) ? '' : 'Please enter your full name.',
-      phone: v => /^[6-9]\d{9}$/.test(v.replace(/[\s\-()]/g, '').replace(/^(\+91|91|0)(?=\d{10}$)/, '')) ? '' : 'Enter a valid 10-digit mobile number.',
-      email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Enter a valid email address.',
-      service: v => v ? '' : 'Please choose the service you need.',
-      message: v => v.trim().length >= 10 ? '' : 'Tell us a little more (at least 10 characters).'
-    };
-    const progress = () => {
-      const pct = Math.round(fields.filter(f => !rules[f.dataset.field](val(f.dataset.field))).length / fields.length * 100);
-      $('#formBar').style.transform = `scaleX(${pct / 100})`; $('#formPct').textContent = pct;
-    };
-    const check = (f, showError) => {
-      const name = f.dataset.field, msg = rules[name](val(name));
-      f.classList.toggle('valid', !msg);
-      if (showError || !msg) {
-        f.classList.toggle('invalid', !!msg); $('.f-err', f).textContent = msg;
-        $$('input, textarea', f).forEach(i => i.setAttribute('aria-invalid', !!msg));
-      }
-      progress(); return !msg;
-    };
-    fields.forEach(f => {
-      // blur validates, but an untouched empty field stays quiet until the first submit
-      f.addEventListener('focusout', e => { if (!f.contains(e.relatedTarget) && (val(f.dataset.field) || f.dataset.touched)) { f.dataset.touched = '1'; check(f, true); } });
-      f.addEventListener('input', () => check(f, !!f.dataset.touched));
-      f.addEventListener('change', () => check(f, !!f.dataset.touched));
-    });
-    $('#f-message').addEventListener('input', e => $('#msgCount').textContent = `${e.target.value.length} / 600`);
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const bad = fields.filter(f => { f.dataset.touched = '1'; return !check(f, true); });
-      if (bad.length) { $('input, textarea', bad[0]).focus(); return; }
-      const d = Object.fromEntries(['name', 'phone', 'email', 'service', 'message'].map(k => [k, val(k).trim()]));
-      const body = `New enquiry via riseinfratech.in\n\nName: ${d.name}\nPhone: ${d.phone}\nEmail: ${d.email}\nService: ${d.service}\n\nDetails:\n${d.message}`;
-      $('#sendWa').href = 'https://wa.me/919130904089?text=' + encodeURIComponent(body);
-      $('#sendMail').href = `mailto:admin@riseinfratech.in?subject=${encodeURIComponent('Enquiry: ' + d.service + ' - ' + d.name)}&body=${encodeURIComponent(body)}`;
-      $('#successName').textContent = d.name.split(/\s+/)[0] + '.';
-      submitBtn.classList.add('loading'); submitBtn.disabled = true;
-      setTimeout(() => {
-        submitBtn.classList.remove('loading'); submitBtn.disabled = false;
-        form.hidden = true; success.classList.add('show'); success.focus({ preventScroll: true });
-        $('#formBar').style.transform = 'scaleX(1)';
-      }, reduceMotion ? 0 : 900);
-    });
-    $('#formReset').addEventListener('click', () => {
-      form.reset(); fields.forEach(f => { f.classList.remove('valid', 'invalid'); delete f.dataset.touched; $('.f-err', f).textContent = ''; });
-      $('#msgCount').textContent = '0 / 600'; progress();
-      success.classList.remove('show'); form.hidden = false; $('#f-name').focus({ preventScroll: true });
-    });
-
-    // "Enquire" links on service cards pre-select the matching service chip
-    $$('[data-service]').forEach(a => a.addEventListener('click', () => {
-      const radio = $$('input[name="service"]', form).find(r => r.value === a.dataset.service);
-      if (radio) { radio.checked = true; check(radio.closest('[data-field]'), false); }
+    $$('[data-cms-attr]').forEach(el => el.dataset.cmsAttr.split('|').forEach(pair => {
+      const i = pair.indexOf('='); if (i < 1) return;
+      const value = fill(pair.slice(i + 1));
+      if (!value.includes('\0') && value.trim()) el.setAttribute(pair.slice(0, i), value);
     }));
-  }
+    $$('[data-cms-hide-empty]').forEach(el => { const v = pick(content, el.dataset.cmsHideEmpty); if (typeof v === 'string' && !v.trim()) el.hidden = true; });
+    $$('[data-cms]').forEach(el => { const v = pick(content, el.dataset.cms); if (typeof v === 'string' && v.trim()) el.textContent = v; });
+    $$('[data-cms-count]').forEach(el => { const v = pick(content, el.dataset.cmsCount); if (isNum(v)) el.dataset.count = String(v).trim(); });
+    $$('[data-cms-list]').forEach(el => {
+      const items = pick(content, el.dataset.cmsList), render = renderers[el.dataset.cmsAs];
+      if (render && Array.isArray(items) && items.length) el.innerHTML = render(items.filter(it => it && typeof it === 'object'), el);
+    });
+  };
 
-  /* ----- Back-to-top + footer year ----- */
-  const toTop = $('#toTop');
-  addEventListener('scroll', () => toTop.classList.toggle('show', scrollY > 800), { passive: true });
-  $('#year').textContent = new Date().getFullYear();
+  const boot = () => {
+
+    /* ----- Theme toggle (defaults to prefers-color-scheme) ----- */
+    $('#themeToggle').addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('rise-theme', next); } catch (e) {}
+    });
+
+    /* ----- Sticky nav: shrink + blur, scroll progress, hero scroll parallax ----- */
+    const nav = $('#nav'), bar = $('#scrollbar'), heroGeo = $('#heroGeo'), heroContent = $('#heroContent');
+    let ticking = false;
+    const onScroll = () => {
+      const y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
+      nav.classList.toggle('scrolled', y > 24);
+      bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+      if (!reduceMotion && y < innerHeight) {
+        const p = y / innerHeight;
+        heroGeo.style.setProperty('--sy', p.toFixed(3));
+        heroContent.style.transform = `translate3d(0, ${p * 70}px, 0)`;
+        heroContent.style.opacity = Math.max(0, 1 - p * 1.35);
+      }
+      ticking = false;
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+    onScroll();
+
+    /* ----- Hero mouse parallax (eased) ----- */
+    if (!reduceMotion && matchMedia('(pointer: fine)').matches) {
+      const hero = $('#home'); let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+      const step = () => {
+        cx += (tx - cx) * .07; cy += (ty - cy) * .07;
+        heroGeo.style.setProperty('--mx', cx.toFixed(4)); heroGeo.style.setProperty('--my', cy.toFixed(4));
+        raf = (Math.abs(tx - cx) + Math.abs(ty - cy) > .001) ? requestAnimationFrame(step) : null;
+      };
+      hero.addEventListener('pointermove', e => {
+        const r = hero.getBoundingClientRect();
+        tx = (e.clientX - r.left) / r.width * 2 - 1; ty = (e.clientY - r.top) / r.height * 2 - 1;
+        if (!raf) raf = requestAnimationFrame(step);
+      });
+      hero.addEventListener('pointerleave', () => { tx = ty = 0; if (!raf) raf = requestAnimationFrame(step); });
+    }
+
+    /* ----- Mobile menu ----- */
+    const burger = $('#burger'), menu = $('#mobileMenu');
+    const setMenu = open => {
+      menu.classList.toggle('open', open); menu.toggleAttribute('inert', !open);
+      burger.setAttribute('aria-expanded', open); burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+    $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+    addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); burger.focus(); } });
+    matchMedia('(min-width: 1280px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+    /* ----- Active nav link ----- */
+    const links = $$('.nav-link');
+    const spy = new IntersectionObserver(entries => entries.forEach(en => {
+      // sections without a nav entry (process, why) keep the previous highlight
+      if (en.isIntersecting && links.some(l => l.getAttribute('href') === '#' + en.target.id))
+        links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(s => spy.observe(s));
+
+    /* ----- Scroll reveal ----- */
+    const revealIO = new IntersectionObserver((entries, io) => entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target; el.classList.add('in'); io.unobserve(el);
+      // drop the stagger delay afterwards so hover transitions stay snappy
+      setTimeout(() => el.style.setProperty('--rd', '0ms'), 1400);
+    }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    $$('.reveal').forEach(el => revealIO.observe(el));
+
+    /* ----- Animated counters ----- */
+    const fmt = new Intl.NumberFormat('en-IN');
+    const runCounter = el => {
+      const end = parseFloat(el.dataset.count), dec = +(el.dataset.decimals || 0), dur = 2200, t0 = performance.now();
+      const show = v => el.textContent = dec ? v.toFixed(dec) : fmt.format(Math.round(v));
+      if (reduceMotion) return show(end);
+      const tick = now => {
+        const p = Math.min(1, (now - t0) / dur), eased = 1 - Math.pow(2, -10 * p);
+        show(p === 1 ? end : end * eased);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const countIO = new IntersectionObserver((entries, io) => entries.forEach(en => {
+      if (en.isIntersecting) { runCounter(en.target); io.unobserve(en.target); }
+    }), { threshold: .6 });
+    $$('[data-count]').forEach(el => countIO.observe(el));
+
+    /* ----- Service cards: cursor-tracking spotlight ----- */
+    $$('.svc').forEach(card => card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect(), inner = card.firstElementChild;
+      inner.style.setProperty('--mx', (e.clientX - r.left) + 'px'); inner.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }));
+
+    /* ----- RMC process strip: steps light up in sequence, then loop ----- */
+    const procList = $('#processSteps');
+    if (procList) {
+      const steps = $$('.step', procList); let active = -1, timer = null;
+      const paint = () => steps.forEach((s, i) => {
+        s.classList.toggle('lit', i <= active); s.classList.toggle('done', i < active); s.classList.toggle('active', i === active);
+      });
+      const advance = () => {
+        active = active >= steps.length - 1 ? -1 : active + 1; paint();
+        timer = setTimeout(advance, active === steps.length - 1 ? 2800 : active === -1 ? 700 : 1500);
+      };
+      if (reduceMotion) { active = steps.length - 1; paint(); steps.forEach(s => s.classList.remove('active')); }
+      else {
+        new IntersectionObserver(([en]) => {
+          if (en.isIntersecting && !timer) advance();
+          else if (!en.isIntersecting && timer) { clearTimeout(timer); timer = null; }
+        }, { threshold: .25 }).observe(procList);
+      }
+    }
+
+    /* ----- Leadership: profile dialog filled from the clicked card ----- */
+    const dialog = $('#profileDialog');
+    if (dialog && typeof dialog.showModal === 'function') {
+      const text = (sel, from) => $(sel, from)?.textContent.trim() ?? '';
+      $('#leadership').addEventListener('click', e => {
+        const btn = e.target.closest('[data-profile]'); if (!btn) return;
+        const card = btn.closest('article');
+        const photo = $('.dir-photo', card);
+        $('#profilePhoto').innerHTML = photo ? photo.innerHTML : '';
+        $('#profilePhoto').dataset.initials = photo?.dataset.initials ?? '';
+        $('#profileName').textContent = text('.dir-name', card);
+        $('#profileRole').textContent = text('.dir-role', card);
+        $('#profileTagline').textContent = text('.dir-tagline', card);
+        $('#profileBio').textContent = text('.dir-bio', card);
+        $('#profileSkills').innerHTML = $$('.dir-skills li', card).map(li => `<li class="tag">${esc(li.textContent)}</li>`).join('');
+        $('#profileLinks').innerHTML = $$('.dir-links a', card).map(a => `<a href="${esc(a.getAttribute('href'))}"${a.target === '_blank' ? ' target="_blank" rel="noopener"' : ''}>${a.innerHTML}</a>`).join('');
+        dialog.showModal();
+        $('#profileClose').focus({ preventScroll: true });
+      });
+      $('#profileClose').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+    } else if (dialog) {
+      $$('[data-profile]').forEach(b => b.hidden = true);
+    }
+
+    /* ----- Projects carousel: mouse drag + momentum, auto-scroll (ping-pong), arrows, progress ----- */
+    const car = $('#carousel');
+    if (car) {
+      const carBar = $('#carBar');
+      let pos = 0, dir = 1, visible = false, hover = false, dragging = false, holdUntil = 0;
+      let startX = 0, startLeft = 0, lastX = 0, lastT = 0, vel = 0, glide = null;
+      const maxScroll = () => car.scrollWidth - car.clientWidth;
+      const hold = ms => holdUntil = performance.now() + ms;
+      const updateBar = () => {
+        const m = maxScroll(), view = m > 0 ? car.clientWidth / car.scrollWidth : 1;
+        carBar.style.transform = `translateX(${(m > 0 ? car.scrollLeft / m : 0) * (1 - view) * 100}%) scaleX(${view})`;
+      };
+      car.addEventListener('scroll', updateBar, { passive: true });
+      addEventListener('resize', updateBar); updateBar();
+
+      const auto = () => {
+        if (visible && !hover && !dragging && !glide && performance.now() > holdUntil && !car.contains(document.activeElement)) {
+          const m = maxScroll();
+          if (Math.abs(pos - car.scrollLeft) > 2) pos = car.scrollLeft;   // re-sync after user scrolling
+          pos += dir * .6;
+          if (pos >= m) { pos = m; dir = -1; hold(1200); } else if (pos <= 0) { pos = 0; dir = 1; hold(1200); }
+          car.scrollLeft = pos;
+        }
+        requestAnimationFrame(auto);
+      };
+      if (!reduceMotion) requestAnimationFrame(auto);
+      new IntersectionObserver(([en]) => visible = en.isIntersecting, { threshold: .2 }).observe(car);
+      car.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hover = true; });
+      car.addEventListener('pointerleave', () => hover = false);
+      car.addEventListener('touchstart', () => hold(5000), { passive: true });
+      car.addEventListener('wheel', () => hold(3000), { passive: true });
+
+      car.addEventListener('pointerdown', e => {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;   // touch uses native scrolling
+        dragging = true; startX = lastX = e.clientX; startLeft = car.scrollLeft; lastT = performance.now(); vel = 0;
+        if (glide) { cancelAnimationFrame(glide); glide = null; }
+        car.setPointerCapture(e.pointerId);
+      });
+      car.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        if (Math.abs(e.clientX - startX) > 4) car.classList.add('dragging');
+        car.scrollLeft = startLeft - (e.clientX - startX);
+        const now = performance.now(), dt = now - lastT;
+        if (dt > 0) { vel = .8 * ((lastX - e.clientX) / dt * 16) + .2 * vel; lastX = e.clientX; lastT = now; }
+      });
+      const endDrag = () => {
+        if (!dragging) return;
+        dragging = false; car.classList.remove('dragging'); hold(2500);
+        const step = () => {
+          vel *= .94; car.scrollLeft += vel;
+          glide = Math.abs(vel) > .4 ? requestAnimationFrame(step) : null;
+        };
+        if (Math.abs(vel) > 1 && !reduceMotion) glide = requestAnimationFrame(step);
+      };
+      car.addEventListener('pointerup', endDrag); car.addEventListener('pointercancel', endDrag);
+
+      const nudge = d => { hold(4000); const card = car.firstElementChild; car.scrollBy({ left: d * (card.offsetWidth + 26), behavior: reduceMotion ? 'auto' : 'smooth' }); };
+      $('#carPrev').addEventListener('click', () => nudge(-1));
+      $('#carNext').addEventListener('click', () => nudge(1));
+    }
+
+    /* ----- Contact: 3D visiting card (tilt, glare, flip) ----- */
+    const vcard = $('#vcard'), flipBtn = $('#flipBtn');
+    if (vcard) {
+      const setFlip = on => {
+        vcard.classList.toggle('flipped', on); flipBtn.setAttribute('aria-pressed', on);
+        $('#vfront').toggleAttribute('inert', on); $('#vback').toggleAttribute('inert', !on);
+      };
+      flipBtn.addEventListener('click', () => setFlip(!vcard.classList.contains('flipped')));
+      vcard.addEventListener('click', e => { if (!e.target.closest('a')) setFlip(!vcard.classList.contains('flipped')); });
+      if (!reduceMotion && matchMedia('(pointer: fine)').matches) {
+        vcard.addEventListener('pointermove', e => {
+          const r = vcard.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+          vcard.classList.add('tilting');
+          vcard.style.setProperty('--ry', ((x - .5) * 20).toFixed(2) + 'deg'); vcard.style.setProperty('--rx', ((.5 - y) * 14).toFixed(2) + 'deg');
+          const flipped = vcard.classList.contains('flipped');
+          vcard.style.setProperty('--gx', ((flipped ? 1 - x : x) * 100).toFixed(1) + '%'); vcard.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
+        });
+        vcard.addEventListener('pointerleave', () => { vcard.classList.remove('tilting'); vcard.style.setProperty('--rx', '0deg'); vcard.style.setProperty('--ry', '0deg'); });
+      }
+    }
+
+    /* ----- Copy-to-clipboard buttons ----- */
+    $$('[data-copy]').forEach(btn => btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy;
+      try { await navigator.clipboard.writeText(text); }
+      catch (e) { const ta = Object.assign(document.createElement('textarea'), { value: text }); document.body.append(ta); ta.select(); try { document.execCommand('copy'); } catch (_) {} ta.remove(); }
+      btn.classList.add('copied'); setTimeout(() => btn.classList.remove('copied'), 1600);
+    }));
+
+    /* ----- Enquiry form: client-side validation only ----- */
+    const form = $('#enquiryForm');
+    if (form) {
+      const fields = $$('[data-field]', form), success = $('#formSuccess'), submitBtn = $('#submitBtn');
+      const val = name => name === 'service' ? (form.elements.service.value || '') : $(`#f-${name}`).value;
+      const rules = {
+        name: v => v.trim().length >= 2 && /^[\p{L} .'-]+$/u.test(v.trim()) ? '' : 'Please enter your full name.',
+        phone: v => /^[6-9]\d{9}$/.test(v.replace(/[\s\-()]/g, '').replace(/^(\+91|91|0)(?=\d{10}$)/, '')) ? '' : 'Enter a valid 10-digit mobile number.',
+        email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Enter a valid email address.',
+        service: v => v ? '' : 'Please choose the service you need.',
+        message: v => v.trim().length >= 10 ? '' : 'Tell us a little more (at least 10 characters).'
+      };
+      const progress = () => {
+        const pct = Math.round(fields.filter(f => !rules[f.dataset.field](val(f.dataset.field))).length / fields.length * 100);
+        $('#formBar').style.transform = `scaleX(${pct / 100})`; $('#formPct').textContent = pct;
+      };
+      const check = (f, showError) => {
+        const name = f.dataset.field, msg = rules[name](val(name));
+        f.classList.toggle('valid', !msg);
+        if (showError || !msg) {
+          f.classList.toggle('invalid', !!msg); $('.f-err', f).textContent = msg;
+          $$('input, textarea', f).forEach(i => i.setAttribute('aria-invalid', !!msg));
+        }
+        progress(); return !msg;
+      };
+      fields.forEach(f => {
+        // blur validates, but an untouched empty field stays quiet until the first submit
+        f.addEventListener('focusout', e => { if (!f.contains(e.relatedTarget) && (val(f.dataset.field) || f.dataset.touched)) { f.dataset.touched = '1'; check(f, true); } });
+        f.addEventListener('input', () => check(f, !!f.dataset.touched));
+        f.addEventListener('change', () => check(f, !!f.dataset.touched));
+      });
+      $('#f-message').addEventListener('input', e => $('#msgCount').textContent = `${e.target.value.length} / 600`);
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const bad = fields.filter(f => { f.dataset.touched = '1'; return !check(f, true); });
+        if (bad.length) { $('input, textarea', bad[0]).focus(); return; }
+        const d = Object.fromEntries(['name', 'phone', 'email', 'service', 'message'].map(k => [k, val(k).trim()]));
+        const body = `New enquiry via riseinfratech.in\n\nName: ${d.name}\nPhone: ${d.phone}\nEmail: ${d.email}\nService: ${d.service}\n\nDetails:\n${d.message}`;
+        const to = { phone: digits(live.contact?.phone) || '919130904089', email: live.contact?.email || 'admin@riseinfratech.in' };
+        $('#sendWa').href = `https://wa.me/${to.phone}?text=` + encodeURIComponent(body);
+        $('#sendMail').href = `mailto:${to.email}?subject=${encodeURIComponent('Enquiry: ' + d.service + ' - ' + d.name)}&body=${encodeURIComponent(body)}`;
+        $('#successName').textContent = d.name.split(/\s+/)[0] + '.';
+        submitBtn.classList.add('loading'); submitBtn.disabled = true;
+        setTimeout(() => {
+          submitBtn.classList.remove('loading'); submitBtn.disabled = false;
+          form.hidden = true; success.classList.add('show'); success.focus({ preventScroll: true });
+          $('#formBar').style.transform = 'scaleX(1)';
+        }, reduceMotion ? 0 : 900);
+      });
+      $('#formReset').addEventListener('click', () => {
+        form.reset(); fields.forEach(f => { f.classList.remove('valid', 'invalid'); delete f.dataset.touched; $('.f-err', f).textContent = ''; });
+        $('#msgCount').textContent = '0 / 600'; progress();
+        success.classList.remove('show'); form.hidden = false; $('#f-name').focus({ preventScroll: true });
+      });
+
+      // "Enquire" links on service cards pre-select the matching service chip
+      $$('[data-service]').forEach(a => a.addEventListener('click', () => {
+        const radio = $$('input[name="service"]', form).find(r => r.value === a.dataset.service);
+        if (radio) { radio.checked = true; check(radio.closest('[data-field]'), false); }
+      }));
+    }
+
+    /* ----- Back-to-top + footer year ----- */
+    const toTop = $('#toTop');
+    addEventListener('scroll', () => toTop.classList.toggle('show', scrollY > 800), { passive: true });
+    $('#year').textContent = new Date().getFullYear();
+  };
+
+  // Apply published content first, so counters, reveals and the enquiry form bind to the final markup.
+  const source = $('meta[name="rise-cms"]')?.content;
+  if (!source || location.protocol === 'file:') return boot();
+  const abort = new AbortController(), timer = setTimeout(() => abort.abort(), 2500);
+  fetch(source, { cache: 'no-cache', signal: abort.signal })
+    .then(r => (r.ok ? r.json() : null)).then(applyContent).catch(() => {})
+    .finally(() => { clearTimeout(timer); boot(); });
 })();
 </script>
 </body>

@@ -16,7 +16,8 @@ jobs:
       - name: Deploy over rsync/SSH
         uses: burnett01/rsync-deployments@7.0.2
         with:
-          switches: -avzr --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore'
+          # content.json is published onto the server by RISE ERP (Website > Content); --delete must not remove it
+          switches: -avzr --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='content.json'
           path: ./
           remote_path: ${{ secrets.DEPLOY_PATH }}
           remote_host: ${{ secrets.DEPLOY_HOST }}
